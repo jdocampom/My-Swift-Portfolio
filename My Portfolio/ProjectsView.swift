@@ -78,11 +78,12 @@ struct ProjectsView: View {
                                 dataController.save()
                             }
                         } label: {
-                            if UIAccessibility.isVoiceOverRunning {
-                                Text("New Project")
-                            } else {
-                                Label("New Project", systemImage: "plus")
-                            }
+//                            if UIAccessibility.isVoiceOverRunning {
+//                                Text("New Project")
+//                            } else {
+//                                Label("New Project", systemImage: "plus")
+//                            }
+                            Label("New Project", systemImage: "plus")
                         }
                     }
                 }
@@ -90,7 +91,7 @@ struct ProjectsView: View {
                     Button {
                         showingSortOrder.toggle()
                     } label: {
-                        Label("Sort", systemImage: "arrow.up.arrow.down")
+                        Label("Sort Items", systemImage: "arrow.up.arrow.down")
                     }
                 }
             }
