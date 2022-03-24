@@ -4,49 +4,48 @@
 //
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import CoreData
 import SwiftUI
 
 final class DataController: ObservableObject {
-    
     let container: NSPersistentCloudKitContainer
-    
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
-                fatalError("❌ FATAL ERROR LOADING DATA MODEL - DataController - ERROR: \(error.localizedDescription) ❌")
+                // swiflint:disable:next line_length
+                fatalError("❌ FATAL ERROR LOADING DATA MODEL - ERROR: \(error.localizedDescription) ❌")
             }
         }
     }
-    
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
         let viewContext = dataController.container.viewContext
         do {
             try dataController.createSampleData()
         } catch {
-            fatalError("❌ FATAL ERROR CREATING PREVIEW DATA MODEL - DataController - ERROR: \(error.localizedDescription) ❌")
+            // swiflint:disable:next line_length
+            fatalError("❌ FATAL ERROR CREATING PREVIEW DATA MODEL - ERROR: \(error.localizedDescription) ❌")
         }
         return dataController
     }()
-    
     func createSampleData () throws {
         let viewContext = container.viewContext
-        for i in 1...5 {
+        for projectCounter in 1...5 {
             let project = Project(context: viewContext)
             let timeInterval = Double(360000 * Int.random(in: 1...5))
-            project.title = "Project \(i)"
+            project.title = "Project \(projectCounter)"
             project.creationDate = Date()
             project.dueDate = Date() + timeInterval
             project.completed = Bool.random()
-            for j in 1...10 {
+            for itemCounter in 1...10 {
                 let item = Item(context: viewContext)
-                item.title = "Item \(j)"
+                item.title = "Item \(itemCounter)"
                 item.creationDate = Date()
                 item.completed = Bool.random()
                 item.priority = Int16.random(in: 1...3)
@@ -55,17 +54,14 @@ final class DataController: ObservableObject {
         }
         try viewContext.save()
     }
-    
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
     }
-    
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-    
     func clearAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -74,11 +70,9 @@ final class DataController: ObservableObject {
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
-    
     func count<T>(for fecthRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fecthRequest)) ?? 0
     }
-    
     func hasEarnedAward(_ award: Award) -> Bool {
         switch award.criterion {
         case "items":
@@ -95,5 +89,4 @@ final class DataController: ObservableObject {
             return false
         }
     }
-    
 }

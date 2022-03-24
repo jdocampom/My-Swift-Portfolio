@@ -4,30 +4,28 @@
 //
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import Foundation
 import SwiftUI
 
 extension Project {
-    
-    static let colors = ["Pink", "Purple", "Red", "Orange", "Gold", "Green", "Teal", "Light Blue", "Dark Blue", "Midnight", "Dark Gray", "Gray"]
-    
-    var projectTitle:        String { title ?? NSLocalizedString("New Project", comment: "Create a New Project") }
-    var projectDetail:       String { detail ?? "" }
+    static let colors = ["Pink", "Purple", "Red", "Orange", "Gold",
+                         "Green", "Teal", "Light Blue", "Dark Blue",
+                         "Midnight", "Dark Gray", "Gray"]
+    var projectTitle: String { title ?? NSLocalizedString("New Project", comment: "Create a New Project") }
+    var projectDetail: String { detail ?? "" }
     var projectCreationDate: Date { creationDate ?? Date() }
-    var projectDueDate:      Date { dueDate ?? Date() }
-    var projectColor:        String { color ?? "Light Blue" }
-    
+    var projectDueDate: Date { dueDate ?? Date() }
+    var projectColor: String { color ?? "Light Blue" }
     //    var projectCompletion:   Bool { completed ?? false }
-    
     var projectItems: [Item] {
         return items?.allObjects as? [Item] ?? []
     }
-    
     var label: LocalizedStringKey {
+        // swiflint:disable:next line_length
         LocalizedStringKey("\(projectTitle), \(projectItems.count) items. Completion: \(completionAmount * 100, specifier: "%g")%.")
     }
-    
     var projectItemsDefaultSorted: [Item] {
         return projectItems.sorted { first, second in
             if !first.completed {
@@ -43,19 +41,16 @@ extension Project {
                 return true
             } else if first.priority < second.priority {
                 return false
-                
             }
             return first.itemCreationDate < second.itemCreationDate
         }
     }
-    
     var completionAmount: Double {
         let originalItems = items?.allObjects as? [Item] ?? []
         guard originalItems.isEmpty == false else { return 0 }
         let completedItems = originalItems.filter(\.completed)
         return Double(completedItems.count) / Double(originalItems.count)
     }
-    
     static var example: Project {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -68,7 +63,6 @@ extension Project {
         project.color = "Light Blue"
         return project
     }
-    
     func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
         switch sortOrder {
         case .title:
@@ -79,5 +73,4 @@ extension Project {
             return projectItemsDefaultSorted
         }
     }
-    
 }

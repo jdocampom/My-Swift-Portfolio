@@ -9,17 +9,15 @@ import CoreData
 import SwiftUI
 
 struct HomeView: View {
-    
     static let tag: String? = "Home"
-    
     var projectRows: [GridItem] { [GridItem(.fixed(100))] }
-    
     @EnvironmentObject private var dataController: DataController
-    
-    @FetchRequest(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)], predicate: NSPredicate(format: "completed = false")) var projects: FetchedResults<Project>
-    
+    @FetchRequest(
+        entity: Project.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)],
+        predicate: NSPredicate(format: "completed = false")
+    ) var projects: FetchedResults<Project>
     let items: FetchRequest<Item>
-    
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         let itemPredicate = NSPredicate(format: "completed = false")
@@ -30,7 +28,6 @@ struct HomeView: View {
         request.fetchLimit = 10
         items = FetchRequest(fetchRequest: request)
     }
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -62,7 +59,6 @@ struct HomeView: View {
             }
         }
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -70,4 +66,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-

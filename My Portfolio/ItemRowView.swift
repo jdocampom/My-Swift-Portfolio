@@ -10,7 +10,6 @@ import SwiftUI
 struct ItemRowView: View {
     @ObservedObject var project: Project
     @ObservedObject var item: Item
-    
     var iconView: some View {
         if item.completed {
             return Image(systemName: "checkmark.circle.fill")
@@ -20,7 +19,6 @@ struct ItemRowView: View {
                 .foregroundColor(Color(project.projectColor))
         }
     }
-    
     var label: Text {
         if item.completed {
             return Text("\(item.itemTitle), completed.")
@@ -32,7 +30,6 @@ struct ItemRowView: View {
             return Text("\(item.itemTitle), low priority.")
         }
     }
-    
     var priorityView: some View {
         if !item.completed {
             switch item.priority {
@@ -54,7 +51,6 @@ struct ItemRowView: View {
                 .foregroundColor(.clear)
         }
     }
-    
     var body: some View {
         NavigationLink(destination: EditItemView(item: item)) {
             HStack {
@@ -65,7 +61,6 @@ struct ItemRowView: View {
             .accessibilityLabel(label)
         }
     }
-    
 }
 
 struct ItemRowView_Previews: PreviewProvider {

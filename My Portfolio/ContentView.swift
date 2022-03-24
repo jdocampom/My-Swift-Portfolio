@@ -4,6 +4,7 @@
 //
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import SwiftUI
 
@@ -17,14 +18,12 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            
             ProjectsView(showClosedProjects: false)
                 .tag(ProjectsView.openTag)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Open")
                 }
-            
             ProjectsView(showClosedProjects: true)
                 .tag(ProjectsView.closedTag)
                 .tabItem {
@@ -43,7 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var dataController = DataController.preview
-    
     static var previews: some View {
         ContentView()
             .environment(\.managedObjectContext, dataController.container.viewContext)

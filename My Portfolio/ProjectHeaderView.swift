@@ -4,13 +4,13 @@
 //
 //  Created by Juan Diego Ocampo on 21/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import SwiftUI
 
 struct ProjectHeaderView: View {
-    
+
     @ObservedObject var project: Project
-    
     var body: some View {
         VStack {
             HStack {
@@ -28,7 +28,6 @@ struct ProjectHeaderView: View {
         .padding(.bottom)
         .accessibilityElement(children: .combine)
     }
-    
 }
 
 struct ProjectHeaderView_Previews: PreviewProvider {

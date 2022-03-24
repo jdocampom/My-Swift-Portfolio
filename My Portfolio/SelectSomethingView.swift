@@ -4,12 +4,13 @@
 //
 //  Created by Juan Diego Ocampo on 22/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import SwiftUI
 
 struct SelectSomethingView: View {
     var body: some View {
-        ZStack(alignment: .center){
+        ZStack(alignment: .center) {
 //        Color.systemGroupedBackground.ignoresSafeArea()
         Text("Please select something from the menu to begin.")
             .italic()

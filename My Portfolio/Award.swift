@@ -4,6 +4,7 @@
 //
 //  Created by Juan Diego Ocampo on 22/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import Foundation
 
@@ -15,7 +16,6 @@ struct Award: Identifiable, Decodable {
     let criterion: String
     let value: Int
     let image: String
-    
     static let allAwards = Bundle.main.decode([Award].self, from: "Awards.json")
     static let example = allAwards.first
 }

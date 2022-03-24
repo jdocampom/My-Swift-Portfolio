@@ -4,33 +4,27 @@
 //
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
+// swiflint:disable: trailing_whitespace
 
 import SwiftUI
 
 struct ProjectsView: View {
-    
     static let openTag: String? = "Open"
     static let closedTag: String? = "Closed"
-    
     @EnvironmentObject var dataController: DataController
-    
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentation
-    
     let showClosedProjects: Bool
-    
     @State private var showingSortOrder = false
     @State private var sortOrder = Item.SortOrder.optimized
-    
     @FetchRequest var projects: FetchedResults<Project>
-    
     init(showClosedProjects: Bool) {
         self.showClosedProjects = showClosedProjects
         _projects = FetchRequest<Project>(entity: Project.entity(),
-                                          sortDescriptors: [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)],
+                                          sortDescriptors: [NSSortDescriptor(keyPath: \Project.creationDate,
+                                                                             ascending: false)],
                                           predicate: NSPredicate(format: "completed = %d", showClosedProjects))
     }
-    
     var projectsList: some View {
         List {
             ForEach(projects) { project in
@@ -51,7 +45,6 @@ struct ProjectsView: View {
         }
         .listStyle(InsetGroupedListStyle())
     }
-    
     var addProjectToolbarButton: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             if !showClosedProjects {
@@ -59,7 +52,6 @@ struct ProjectsView: View {
             }
         }
     }
-    
     var sortItemsToolbarButton: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Button { showingSortOrder.toggle()} label: {
@@ -67,7 +59,6 @@ struct ProjectsView: View {
             }
         }
     }
-    
     var body: some View {
         NavigationView {
             Group {
@@ -94,11 +85,9 @@ struct ProjectsView: View {
             }
         }
     }
-    
 }
 
 extension ProjectsView {
-    
     func addProject() {
         withAnimation {
             let project = Project(context: viewContext)
@@ -107,7 +96,6 @@ extension ProjectsView {
             dataController.save()
         }
     }
-    
     func addItem(to project: Project) {
         withAnimation {
             let item = Item(context: viewContext)
@@ -116,7 +104,6 @@ extension ProjectsView {
             dataController.save()
         }
     }
-    
     func delete(_ offsets: IndexSet, from project: Project) {
         let allItems = project.projectItems(using: sortOrder)
         for offset in offsets {
