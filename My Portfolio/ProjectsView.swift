@@ -79,6 +79,7 @@ struct ProjectsView: View {
                 }
             }
             .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
+//            .background(Color.systemGroupedBackground.ignoresSafeArea())
             .toolbar {
                 addProjectToolbarButton
                 sortItemsToolbarButton

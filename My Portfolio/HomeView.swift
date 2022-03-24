@@ -22,7 +22,10 @@ struct HomeView: View {
     
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "completed = false")
+        let itemPredicate = NSPredicate(format: "completed = false")
+        let projectPredicate = NSPredicate(format: "project.completed = false")
+        let predicate = NSCompoundPredicate(type: .and, subpredicates: [itemPredicate, projectPredicate])
+        request.predicate = predicate
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
         request.fetchLimit = 10
         items = FetchRequest(fetchRequest: request)
@@ -49,8 +52,17 @@ struct HomeView: View {
             }
             .navigationTitle("Home")
             .background(Color.systemGroupedBackground.ignoresSafeArea())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Add Data") {
+                        dataController.clearAll()
+                        try? dataController.createSampleData()
+                    }
+                }
+            }
         }
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {

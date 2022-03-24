@@ -42,6 +42,7 @@ struct AwardsView: View {
                 SelectSomethingView()
             }
             .navigationTitle("Awards")
+            .background(Color.systemGroupedBackground.ignoresSafeArea())
             .alert(isPresented: $showingAwardDetails) {
                 if dataController.hasEarnedAward(selectedAward!) {
                     return Alert(title: Text(selectedAward!.name), message: Text(selectedAward!.description), dismissButton: .default(Text("OK")))
