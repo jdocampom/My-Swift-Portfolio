@@ -21,6 +21,18 @@ struct ItemRowView: View {
         }
     }
     
+    var label: Text {
+        if item.completed {
+            return Text("\(item.itemTitle), completed.")
+        } else if item.priority == 3 {
+            return Text("\(item.itemTitle), high priority.")
+        } else if item.priority == 2 {
+            return Text("\(item.itemTitle), medium priority.")
+        } else {
+            return Text("\(item.itemTitle), low priority.")
+        }
+    }
+    
     var priorityView: some View {
         if !item.completed {
             switch item.priority {
@@ -50,6 +62,7 @@ struct ItemRowView: View {
                 Spacer()
                 priorityView
             }
+            .accessibilityLabel(label)
         }
     }
     

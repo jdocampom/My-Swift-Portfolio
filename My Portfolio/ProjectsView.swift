@@ -78,7 +78,11 @@ struct ProjectsView: View {
                                 dataController.save()
                             }
                         } label: {
-                            Label("New Project", systemImage: "plus")
+                            if UIAccessibility.isVoiceOverRunning {
+                                Text("New Project")
+                            } else {
+                                Label("New Project", systemImage: "plus")
+                            }
                         }
                     }
                 }
@@ -91,8 +95,8 @@ struct ProjectsView: View {
                 }
             }
             .actionSheet(isPresented: $showingSortOrder) {
-                ActionSheet(title: Text("Sort items"), message: nil, buttons: [
-                    .default(Text("Optimized")) { sortOrder = .optimized },
+                ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
+                    .default(Text("Automatic")) { sortOrder = .optimized },
                     .default(Text("Creation Date")) { sortOrder = .creationDate },
                     .default(Text("Title")) { sortOrder = .title },
                     .cancel()

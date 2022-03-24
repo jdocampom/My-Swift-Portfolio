@@ -26,6 +26,7 @@ struct ProjectHeaderView: View {
                 .accentColor(Color(project.projectColor))
         }
         .padding(.bottom)
+        .accessibilityElement(children: .combine)
     }
     
 }

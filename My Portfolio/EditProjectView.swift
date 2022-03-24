@@ -27,12 +27,12 @@ struct EditProjectView: View {
     var body: some View {
         Form {
             
-            Section(header: Text("Basic settings")) {
-                TextField("Project name", text: $title.onChange(update))
-                TextField("Description of this project", text: $detail.onChange(update))
+            Section(header: Text("Project Settings")) {
+                TextField("Name", text: $title.onChange(update))
+                TextField("Description", text: $detail.onChange(update))
             }
             
-            Section(header: Text("Custom project color")) {
+            Section(header: Text("Color Label")) {
                 LazyVGrid(columns: colorColumns) {
                     ForEach(Project.colors, id: \.self) { item in
                         ZStack {
@@ -50,18 +50,21 @@ struct EditProjectView: View {
                             color = item
                             update()
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityAddTraits(item == color ? [.isButton, .isButton] : .isButton)
+                        .accessibilityLabel(LocalizedStringKey(item))
                     }
                 }
                 .padding(.vertical)
             }
             
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
-                Button(project.completed ? "Reopen this project" : "Close this project") {
+            Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {
+                Button(project.completed ? "Reopen this Project" : "Close this Project") {
                     project.completed.toggle()
                     update()
                 }
                 
-                Button("Delete this project") {
+                Button("Delete this Project") {
                     showingDeleteConfirm.toggle()
                 }
                 .accentColor(.red)
@@ -71,7 +74,7 @@ struct EditProjectView: View {
         .navigationTitle("Edit Project")
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
-            Alert(title: Text("Delete project?"), message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), primaryButton: .default(Text("Delete"), action: delete), secondaryButton: .cancel())
+            Alert(title: Text("Delete Project"), message: Text("Are you sure you want to delete this project? By doing so, you will also delete all the items it contains."), primaryButton: .default(Text("Delete"), action: delete), secondaryButton: .cancel())
         }
     }
     

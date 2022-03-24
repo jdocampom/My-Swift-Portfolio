@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		860EBEA427EA0DFD00BD95E7 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 860EBEA327EA0DFD00BD95E7 /* Awards.json */; };
 		860EBEA627EA0E9C00BD95E7 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */; };
 		860EBEA827EA183B00BD95E7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA727EA183B00BD95E7 /* Award.swift */; };
 		860EBEAA27EA191B00BD95E7 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA927EA191B00BD95E7 /* AwardsView.swift */; };
@@ -31,10 +30,12 @@
 		86C504FB27E4CC290074EBB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C504FA27E4CC290074EBB8 /* Preview Assets.xcassets */; };
 		86C5050327E4CF580074EBB8 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86C5050127E4CF580074EBB8 /* Main.xcdatamodeld */; };
 		86C5050527E4D2D80074EBB8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5050427E4D2D80074EBB8 /* DataController.swift */; };
+		86FC793F27EB9AF4003E16FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794127EB9AF4003E16FE /* Localizable.strings */; };
+		86FC794327EB9B2F003E16FE /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794527EB9B2F003E16FE /* Localizable.stringsdict */; };
+		86FC794727EB9B44003E16FE /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794927EB9B44003E16FE /* Awards.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		860EBEA327EA0DFD00BD95E7 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
 		860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		860EBEA727EA183B00BD95E7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		860EBEA927EA191B00BD95E7 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,12 @@
 		86C504FA27E4CC290074EBB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		86C5050227E4CF580074EBB8 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		86C5050427E4D2D80074EBB8 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		86FC794027EB9AF4003E16FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86FC794227EB9B14003E16FE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86FC794427EB9B2F003E16FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		86FC794627EB9B31003E16FE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		86FC794827EB9B44003E16FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
+		86FC794A27EB9B45003E16FE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/Awards.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +130,6 @@
 		86C504F227E4CC270074EBB8 /* My Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				860EBEA327EA0DFD00BD95E7 /* Awards.json */,
 				861DE20D27E4DD25002B1171 /* My Portfolio.entitlements */,
 				861DE20E27E4DD3B002B1171 /* My-Portfolio-Info.plist */,
 				86C504F527E4CC270074EBB8 /* ContentView.swift */,
@@ -144,6 +150,9 @@
 				86C504F927E4CC290074EBB8 /* Preview Content */,
 				860EBEA727EA183B00BD95E7 /* Award.swift */,
 				860EBEA927EA191B00BD95E7 /* AwardsView.swift */,
+				86FC794927EB9B44003E16FE /* Awards.json */,
+				86FC794127EB9AF4003E16FE /* Localizable.strings */,
+				86FC794527EB9B2F003E16FE /* Localizable.stringsdict */,
 			);
 			path = "My Portfolio";
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 86C504E727E4CC270074EBB8;
 			productRefGroup = 86C504F127E4CC270074EBB8 /* Products */;
@@ -214,10 +224,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86FC793F27EB9AF4003E16FE /* Localizable.strings in Resources */,
 				8651719F27E8E5E2003C6DDC /* Colors.xcassets in Resources */,
-				860EBEA427EA0DFD00BD95E7 /* Awards.json in Resources */,
+				86FC794727EB9B44003E16FE /* Awards.json in Resources */,
 				86C504FB27E4CC290074EBB8 /* Preview Assets.xcassets in Resources */,
 				86C504F827E4CC290074EBB8 /* Assets.xcassets in Resources */,
+				86FC794327EB9B2F003E16FE /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +263,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		86FC794127EB9AF4003E16FE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FC794027EB9AF4003E16FE /* en */,
+				86FC794227EB9B14003E16FE /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		86FC794527EB9B2F003E16FE /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FC794427EB9B2F003E16FE /* en */,
+				86FC794627EB9B31003E16FE /* es */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		86FC794927EB9B44003E16FE /* Awards.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FC794827EB9B44003E16FE /* en */,
+				86FC794A27EB9B45003E16FE /* es */,
+			);
+			name = Awards.json;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		86C504FC27E4CC290074EBB8 /* Debug */ = {
