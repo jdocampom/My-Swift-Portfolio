@@ -9,8 +9,11 @@ import CoreData
 import SwiftUI
 
 struct HomeView: View {
+    
     static let tag: String? = "Home"
+    
     var projectRows: [GridItem] { [GridItem(.fixed(100))] }
+    
     @EnvironmentObject private var dataController: DataController
     @FetchRequest(
         entity: Project.entity(),

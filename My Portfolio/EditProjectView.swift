@@ -31,7 +31,8 @@ struct EditProjectView: View {
                 }
                 .padding(.vertical)
             }
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {// swiflint:disable:this line_length
+            // swiflint:disable:next line_length
+            Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {
                 Button(project.completed ? "Reopen this Project" : "Close this Project") {
                     project.completed.toggle()
                     update()
@@ -54,12 +55,14 @@ struct EditProjectView: View {
             )
         }
     }
+    
     init(project: Project) {
         self.project = project
         _title = State(wrappedValue: project.projectTitle)
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
     }
+    
     func update() {
         project.title = title
         project.detail = detail
@@ -70,6 +73,7 @@ struct EditProjectView: View {
         dataController.delete(project)
         presentationMode.wrappedValue.dismiss()
     }
+    
     func colorButton(for item: String) -> some View {
         ZStack {
             Color(item)

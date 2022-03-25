@@ -10,7 +10,9 @@ import CoreData
 import SwiftUI
 
 final class DataController: ObservableObject {
+    
     let container: NSPersistentCloudKitContainer
+    
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         if inMemory {
@@ -23,6 +25,7 @@ final class DataController: ObservableObject {
             }
         }
     }
+    
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
         let viewContext = dataController.container.viewContext
@@ -34,6 +37,7 @@ final class DataController: ObservableObject {
         }
         return dataController
     }()
+    
     func createSampleData () throws {
         let viewContext = container.viewContext
         for projectCounter in 1...5 {
@@ -54,14 +58,17 @@ final class DataController: ObservableObject {
         }
         try viewContext.save()
     }
+    
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
     }
+    
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
+    
     func clearAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -70,9 +77,11 @@ final class DataController: ObservableObject {
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
+    
     func count<T>(for fecthRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fecthRequest)) ?? 0
     }
+    
     func hasEarnedAward(_ award: Award) -> Bool {
         switch award.criterion {
         case "items":
@@ -89,4 +98,5 @@ final class DataController: ObservableObject {
             return false
         }
     }
+    
 }
