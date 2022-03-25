@@ -4,7 +4,6 @@
 //
 //  Created by Juan Diego Ocampo on 21/03/22.
 //
-// swiflint:disable: trailing_whitespace
 
 import Foundation
 
@@ -19,5 +18,5 @@ extension Sequence {
     func sorted<Value: Comparable>(by keyPath: KeyPath<Element, Value>) -> [Element] {
         self.sorted(by: keyPath, using: <)
     }
-    
+        
 }

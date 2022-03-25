@@ -31,7 +31,6 @@ struct EditProjectView: View {
                 }
                 .padding(.vertical)
             }
-            // swiflint:disable:next line_length
             Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {
                 Button(project.completed ? "Reopen this Project" : "Close this Project") {
                     project.completed.toggle()
