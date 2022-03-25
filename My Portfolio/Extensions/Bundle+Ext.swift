@@ -4,11 +4,12 @@
 //
 //  Created by Juan Diego Ocampo on 22/03/22.
 //
-// swiflint:disable: trailing_whitespace
 
 import Foundation
 
 extension Bundle {
+    
+    /// Tag: Generic Method for decoding data stored in the App's Bundle as JSON or XML into any custom Type.
     func decode<T: Decodable>(
         _ type: T.Type,
         from file: String,
@@ -19,12 +20,15 @@ extension Bundle {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("ERROR: Failed to locate \(file) in Bundle.")
         }
+        
         guard let data = try? Data(contentsOf: url) else {
             fatalError("ERROR: Failed to load \(file) from Bundle.")
         }
+        
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = dateDecodingStrategy
         decoder.keyDecodingStrategy = keyDecodingStrategy
+        
         do {
             return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
@@ -44,4 +48,5 @@ extension Bundle {
             fatalError("ERROR: Failed to decode \(file) from Bundle: \(error.localizedDescription).")
         }
     }
+    
 }

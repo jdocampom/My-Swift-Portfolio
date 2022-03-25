@@ -4,15 +4,22 @@
 //
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
-// swiflint:disable: trailing_whitespace
 
 import CoreData
 import SwiftUI
 
+/// An environment singleton responsible for managing our CoreData stack, including handling saving,
+/// counting fetch requests, tracking awards and dealing with sample data.
 final class DataController: ObservableObject {
     
+    /// The lone CloudKit Container used to store our data.
     let container: NSPersistentCloudKitContainer
     
+    /// Initialises a DataController either in memory for temporary use such as testing or preview or on
+    /// permanent for regular app usage.
+    ///
+    /// Defaults to permanent storage.
+    /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         if inMemory {
@@ -20,7 +27,6 @@ final class DataController: ObservableObject {
         }
         container.loadPersistentStores { _, error in
             if let error = error {
-                // swiflint:disable:next line_length
                 fatalError("❌ FATAL ERROR LOADING DATA MODEL - ERROR: \(error.localizedDescription) ❌")
             }
         }
@@ -32,12 +38,13 @@ final class DataController: ObservableObject {
         do {
             try dataController.createSampleData()
         } catch {
-            // swiflint:disable:next line_length
             fatalError("❌ FATAL ERROR CREATING PREVIEW DATA MODEL - ERROR: \(error.localizedDescription) ❌")
         }
         return dataController
     }()
     
+    /// Creates example projects with items to make manual testing easier.
+    /// - Throws: An NSError sent from calling `save()` on the `NSManagedObjectContext`
     func createSampleData () throws {
         let viewContext = container.viewContext
         for projectCounter in 1...5 {
@@ -59,6 +66,8 @@ final class DataController: ObservableObject {
         try viewContext.save()
     }
     
+    /// Saves our CoreData context if there are changes. This silently ignores any errors caused by saving
+    /// but this should be fine because our attributes are optional.
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
@@ -78,22 +87,25 @@ final class DataController: ObservableObject {
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
     
-    func count<T>(for fecthRequest: NSFetchRequest<T>) -> Int {
-        (try? container.viewContext.count(for: fecthRequest)) ?? 0
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
     
     func hasEarnedAward(_ award: Award) -> Bool {
         switch award.criterion {
         case "items":
+            // Returns true if they added a certain amount of items.
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
         case "complete":
+            // Returns true if they completed a certain amount of items.
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
         default:
+            // Unknown award criterion. The following line with the fatalError shouldn't go into production.
 //            fatalError("Unknown award criterion: \(award.criterion)")
             return false
         }

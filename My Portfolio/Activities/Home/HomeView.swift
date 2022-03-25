@@ -21,7 +21,10 @@ struct HomeView: View {
         predicate: NSPredicate(format: "completed = false")
     ) var projects: FetchedResults<Project>
     let items: FetchRequest<Item>
+    
+    /// Tag: Custom initialiser for the HomeView Struct
     init() {
+        /// Construct a FetchRequest to show the 10 incomplete items with highest priority from open projects.
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         let itemPredicate = NSPredicate(format: "completed = false")
         let projectPredicate = NSPredicate(format: "project.completed = false")
