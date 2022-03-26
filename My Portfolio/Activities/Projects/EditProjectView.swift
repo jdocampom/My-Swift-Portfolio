@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct EditProjectView: View {
-    let project: Project
+    
+    private let colorColumns = [GridItem(.adaptive(minimum: 44))]
+    
+    @ObservedObject var project: Project
+    
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
+    
     @State private var showingDeleteConfirm = false
     @State private var title: String
     @State private var detail: String
     @State private var color: String
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 44))
-    ]
+    
     var body: some View {
         Form {
             Section(header: Text("Project Settings")) {
@@ -61,6 +64,10 @@ struct EditProjectView: View {
         _color = State(wrappedValue: project.projectColor)
     }
     
+}
+
+extension EditProjectView {
+    
     func update() {
         project.title = title
         project.detail = detail
@@ -91,6 +98,7 @@ struct EditProjectView: View {
         .accessibilityAddTraits(item == color ? [.isButton, .isButton] : .isButton)
         .accessibilityLabel(LocalizedStringKey(item))
     }
+    
 }
 
 struct EditProjectView_Previews: PreviewProvider {
