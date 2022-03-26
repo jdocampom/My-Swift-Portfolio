@@ -29,6 +29,12 @@ final class DataController: ObservableObject {
             if let error = error {
                 fatalError("❌ FATAL ERROR LOADING DATA MODEL - ERROR: \(error.localizedDescription) ❌")
             }
+            #if DEBUG
+            if CommandLine.arguments.contains("enable-testing") {
+                self.clearAll()
+                UIView.setAnimationsEnabled(false)
+            }
+            #endif
         }
     }
     
