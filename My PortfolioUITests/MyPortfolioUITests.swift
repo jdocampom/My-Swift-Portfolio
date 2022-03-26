@@ -75,6 +75,7 @@ class MyPortfolioUITests: XCTestCase {
     }
     
     func testEditingProjectUpdatesCorrectly() {
+        let errorMessage = "The new project Name should be visible on the list."
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should not be any project created at the very first runtime.")
         app.buttons["New Project"].tap()
@@ -85,11 +86,12 @@ class MyPortfolioUITests: XCTestCase {
         app.keys["more"].tap()
         app.keys["2"].tap()
         app.buttons["intro"].tap()
-        app.buttons["Back"].tap()
-        XCTAssertTrue(app.textViews["NEW PROJECT 2"].exists, "The new project Name should be visible on the list.")
+        app.buttons["Open Projects"].tap()
+        XCTAssertTrue(app.staticTexts["New Project 2"].exists, errorMessage)
     }
     
     func testEditingItemsUpdatesCorrectly() {
+        let errorMessage = "The new item Title should be visible on the list."
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should not be any project created at the very first runtime.")
         app.buttons["New Project"].tap()
@@ -102,7 +104,7 @@ class MyPortfolioUITests: XCTestCase {
         app.keys["2"].tap()
         app.buttons["intro"].tap()
         app.buttons["Open Projects"].tap()
-        XCTAssertTrue(app.textViews["New Item 2"].exists, "The new item Title should be visible on the list.")
+        XCTAssertTrue(app.buttons["New Item 2, low priority."].exists, errorMessage)
     }
     
     func testAllAwardsShowLockedAlert() {
