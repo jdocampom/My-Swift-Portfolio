@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ItemListView: View {
+    
     let title: LocalizedStringKey
-    let items: FetchedResults<Item>.SubSequence
+    let items: ArraySlice<Item>
+    
     var body: some View {
         if items.isEmpty {
             EmptyView()
+//            Text("There are not any open projects at the moment").foregroundColor(.secondary)
         } else {
             Text(title)
                 .font(.headline)
@@ -21,9 +24,10 @@ struct ItemListView: View {
             ForEach(items) { item in
                 NavigationLink(destination: EditItemView(item: item)) {
                     HStack(spacing: 20) {
-                        Circle()
-                            .stroke(Color(item.project?.color ?? "Light Blue"), lineWidth: 3)
-                            .frame(width: 28, height: 28)
+                        Image(systemName: "circle.fill")
+                            .resizable()
+                            .foregroundColor(Color(item.project?.color ?? "Light Blue"))
+                            .frame(width: 17, height: 17)
                         VStack(alignment: .leading) {
                             Text(item.itemTitle)
                                 .font(.title3)
@@ -43,4 +47,5 @@ struct ItemListView: View {
             }
         }
     }
+    
 }

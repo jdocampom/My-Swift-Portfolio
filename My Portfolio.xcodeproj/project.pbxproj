@@ -31,6 +31,9 @@
 		86784F1527EE7A83005EC3A6 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1427EE7A83005EC3A6 /* PerformanceTests.swift */; };
 		86784F1D27EE816B005EC3A6 /* MyPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1C27EE816B005EC3A6 /* MyPortfolioUITests.swift */; };
 		86784F1F27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1E27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift */; };
+		868E96D327EEBB2400B540BA /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */; };
+		868E96D627EF639400B540BA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D527EF639400B540BA /* HomeViewModel.swift */; };
+		868E96DA27EF6F3D00B540BA /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */; };
 		86C504F427E4CC270074EBB8 /* MyPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C504F327E4CC270074EBB8 /* MyPortfolioApp.swift */; };
 		86C504F627E4CC270074EBB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C504F527E4CC270074EBB8 /* ContentView.swift */; };
 		86C504F827E4CC290074EBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86C504F727E4CC290074EBB8 /* Assets.xcassets */; };
@@ -93,6 +96,9 @@
 		86784F1A27EE816A005EC3A6 /* My PortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My PortfolioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86784F1C27EE816B005EC3A6 /* MyPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITests.swift; sourceTree = "<group>"; };
 		86784F1E27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		868E96D527EF639400B540BA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
 		86C504F027E4CC270074EBB8 /* My Portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Portfolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C504F327E4CC270074EBB8 /* MyPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioApp.swift; sourceTree = "<group>"; };
 		86C504F527E4CC270074EBB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +192,33 @@
 			path = "My PortfolioUITests";
 			sourceTree = "<group>";
 		};
+		868E96D427EF638300B540BA /* ProjectsView */ = {
+			isa = PBXGroup;
+			children = (
+				861DE21427E4F5DF002B1171 /* ProjectsView.swift */,
+				868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */,
+			);
+			path = ProjectsView;
+			sourceTree = "<group>";
+		};
+		868E96D727EF639900B540BA /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				861DE21227E4F517002B1171 /* HomeView.swift */,
+				868E96D527EF639400B540BA /* HomeViewModel.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		868E96D827EF6F2C00B540BA /* ItemRowView */ = {
+			isa = PBXGroup;
+			children = (
+				8651719627E8D33D003C6DDC /* ItemRowView.swift */,
+				868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */,
+			);
+			path = ItemRowView;
+			sourceTree = "<group>";
+		};
 		86C504E727E4CC270074EBB8 = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +279,7 @@
 		86D59C4D27EDFB9700A60DDD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				861DE21227E4F517002B1171 /* HomeView.swift */,
+				868E96D727EF639900B540BA /* HomeView */,
 				86FC794C27ECD558003E16FE /* ItemListView.swift */,
 				86FC794E27ECD653003E16FE /* ProjectSummaryView.swift */,
 			);
@@ -256,12 +289,12 @@
 		86D59C4E27EDFB9C00A60DDD /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				861DE21427E4F5DF002B1171 /* ProjectsView.swift */,
-				860EBEAB27EA292D00BD95E7 /* SelectSomethingView.swift */,
-				8651719C27E8DFF9003C6DDC /* ProjectHeaderView.swift */,
-				8651719627E8D33D003C6DDC /* ItemRowView.swift */,
-				865171A027E8EA0D003C6DDC /* EditProjectView.swift */,
 				8651719427E8D2B4003C6DDC /* EditItemView.swift */,
+				865171A027E8EA0D003C6DDC /* EditProjectView.swift */,
+				868E96D827EF6F2C00B540BA /* ItemRowView */,
+				8651719C27E8DFF9003C6DDC /* ProjectHeaderView.swift */,
+				868E96D427EF638300B540BA /* ProjectsView */,
+				860EBEAB27EA292D00BD95E7 /* SelectSomethingView.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -490,6 +523,7 @@
 				8651719D27E8DFF9003C6DDC /* ProjectHeaderView.swift in Sources */,
 				860EBEA627EA0E9C00BD95E7 /* Bundle+Ext.swift in Sources */,
 				860EBEAC27EA292D00BD95E7 /* SelectSomethingView.swift in Sources */,
+				868E96D627EF639400B540BA /* HomeViewModel.swift in Sources */,
 				86C5050327E4CF580074EBB8 /* Main.xcdatamodeld in Sources */,
 				861DE22127E5075C002B1171 /* Project+CoreData.swift in Sources */,
 				865171A327E9139D003C6DDC /* Sequence+Ext.swift in Sources */,
@@ -504,7 +538,9 @@
 				86FC794D27ECD558003E16FE /* ItemListView.swift in Sources */,
 				861DE21F27E5052B002B1171 /* Item+CoreData.swift in Sources */,
 				8651719527E8D2B4003C6DDC /* EditItemView.swift in Sources */,
+				868E96DA27EF6F3D00B540BA /* ItemRowViewModel.swift in Sources */,
 				860EBEAE27EA2D3A00BD95E7 /* Color+Ext.swift in Sources */,
+				868E96D327EEBB2400B540BA /* ProjectsViewModel.swift in Sources */,
 				8651719927E8D81E003C6DDC /* Binding+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
