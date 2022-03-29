@@ -8,47 +8,45 @@
     </a>
 </p>
 
-Este repositorio contiene mi copia de la serie "Ultimate Porfolio" de [Hacking with Swift+] (https://www.hackingwithswift.com/plus), que es un fantástico recurso de aprendizaje en línea desarrollado y mantenido por [Paul Hudson] (https://www.twitter.com/twostraws).
+This repostory contains my copy of the "Ultimate Porfolio" series from [Hacking with Swift+](https://www.hackingwithswift.com/plus), which is a fantastic online learning resource developed and maintained by [Paul Hudson](https://www.twitter.com/twostraws).
 
-Contiene una aplicación de gestión de proyectos basada en SwiftUI que utiliza `CoreData` y `CloudKit` para almacenar datos de usuario. Esta aplicación tiene la intención de implementar varios marcos de Apple para ampliar su funcionalidad y, en última instancia, ofrecer una aplicación universal que también funcione en el Mac gracias al poder de SwiftUI.
 
-## Prerequisitos
+It contains a SwiftUI based project managemenent app that uses `CoreData` and `CloudKit` for storing user data. This app intends to implement several Apple Frameworks to extend its functionality and ultimately deliver a universal App that works also on the Mac thanks to the power of SwiftUI.
 
-Esta aplicación iOS está escrita usando Xcode 13 y Swift 5.5. Sin embargo, también ha sido diseñada para incluir soporte para iOS 14. Por lo tanto, este proyecto se puede compilar utilizando Xcode 12 (o posteriores) y cualquier dispositivo iOS que tenga instalado iOS 14 (o posteriores).
+## Pre-requisites
 
-#### Fundamentales
+This iOS App is written using Xcode 13 and Swift 5.5. However, its been designed to include support for iOS 14 as well. Thus, this project can be compiled using Xcode 12+ and any iOS device with iOS 14 or later installed.
 
-* Xcode 12 o posterior.
-* Dispositivo iOS con iOS 14 o posterior (para probar características que dependen de hardware físico como VoiceOver o gestos hápticos).
-* Cuenta paga del Programa de Desarrolladores de Apple (para acceder a la consola  y a las funcionalidades de CloudKit.
+#### Requirements
+* Xcode 12 or later.
+* iOS device with iOS 14 or later (for testing features reliant on physical hardware such as VoiceOver or Haptics).
+* Paid Apple Developer Program Account (for access to CloudKit Console and its functionalities.).
 
-#### Opcionales
-
+#### Optional
 * Homebrew.
 * Swiftlint.
-* SwiftFormat para Xcode.
+* SwiftFormat for Xcode.
 
-## ¿Qué he aprendido?
+## What have I learned?
+* App Prototyping and Design with SwiftUI.
+* Decoding and Encoding data with JSON.
+* Working with `CoreData` in SwiftUI.
+* `CloudKit` usage with `NSPersistantCloudKitContainer`.
+* Unit and UI Tests.
+* Project Documentation.
+* MVC and MVVM Architectural Patterns.
+* Code Linting and Project Organization.
+* Accessibility (VoiceOver and Dynamic Type).
+* Several Xcode tips ans tricks.
+* App Internationalization and Localization.
 
-* Prototipado y diseño de aplicaciones con SwiftUI.
-* Decodificación y codificación de datos con JSON.
-* Uso de `CoreData` en SwiftUI.
-* Uso de `CloudKit` con `NSPersistantCloudKitContainer`.
-* Pruebas de unitarias y de interfaz de usuario.
-* Documentación del proyecto.
-* Patrones arquitectónicos MVC y MVVM.
-* Forro de código y organización de proyectos.
-* Accesibilidad (VoiceOver y Tipo Dinámico).
-* Varios consejos y trucos de Xcode.
-* Internacionalización y localización de aplicaciones.
-
-## Agradecimientos
+## Acknowledgements
 
 * [Paul Hudson](https://www.twitter.com/twostraws)
-* [Hacking con Swift](https://www.hackingwithswift.com)
+* [Hacking with Swift](https://www.hackingwithswift.com)
 
 ## Legal
 
-Este proyecto y su código son de código abierto y están licenciados bajo la licencia MIT. Para obtener más información, consulte el archivo LICENSE.md.
+This project and its code is open-sourced and licensed under the MIT license. For more information check the LICENSE.md file. 
 
-Swift, el logotipo de Swift, Xcode, Instrumentos, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac y macOS son marcas comerciales de Apple Inc., registradas en los EE. UU. y otros países.
+Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries.
