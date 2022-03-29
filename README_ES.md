@@ -42,6 +42,7 @@ Esta aplicación iOS está escrita usando Xcode 13 y Swift 5.5. Sin embargo, tam
 * Varios consejos y trucos de Xcode.
 * Internacionalización y localización de aplicaciones.
 * `CoreHaptics` y Hápticos Personalizados.
+* Spotlight.
 
 ## Agradecimientos
 

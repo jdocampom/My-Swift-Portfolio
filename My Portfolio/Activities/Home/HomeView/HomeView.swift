@@ -5,6 +5,7 @@
 //  Created by Juan Diego Ocampo on 18/03/22.
 //
 
+import CoreSpotlight
 import SwiftUI
 
 struct HomeView: View {
@@ -38,9 +39,19 @@ struct HomeView: View {
                     }
                     .padding()
                 }
+                if let item = viewModel.selectedItem {
+                    NavigationLink(
+                        destination: EditItemView(item: item),
+                        tag: item,
+                        selection: $viewModel.selectedItem,
+                        label: EmptyView.init
+                    )
+                    .id(item)
+                }
             }
             .navigationTitle("Home")
             .background(Color.systemGroupedBackground.ignoresSafeArea())
+            .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
             #if DEBUG
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -48,6 +59,12 @@ struct HomeView: View {
                 }
             }
             #endif
+        }
+    }
+    
+    func loadSpotlightItem(_ userActivity: NSUserActivity) {
+        if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+            viewModel.selectItem(with: uniqueIdentifier)
         }
     }
     

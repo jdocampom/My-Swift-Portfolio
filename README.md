@@ -40,6 +40,7 @@ This iOS App is written using Xcode 13 and Swift 5.5. However, its been designed
 * Several Xcode tips ans tricks.
 * App Internationalization and Localization.
 * `CoreHaptics` and Custom Haptics.
+* Spotlight.
 
 ## Acknowledgements
 
