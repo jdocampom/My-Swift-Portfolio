@@ -22,7 +22,12 @@ struct EditProjectView: View {
     @State private var detail: String
     @State private var color: String
     
+    @State private var remindMe: Bool
+    @State private var reminderTime: Date
+    
     @State private var engine = try? CHHapticEngine()
+    
+    @State private var showingNotificationsError = false
     
     var body: some View {
         Form {
@@ -35,6 +40,22 @@ struct EditProjectView: View {
                     ForEach(Project.colors, id: \.self, content: colorButton)
                 }
                 .padding(.vertical)
+            }
+            Section(header: Text("Project Reminders")) {
+                Toggle("Enable Notifications", isOn: $remindMe.animation().onChange(update))
+                    .alert(isPresented: $showingNotificationsError) {
+                        Alert(
+                            title: Text("Oops!"),
+                            message: Text("There was a problem. Please check you have notifications enabled."),
+                            primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+                            secondaryButton: .cancel()
+                        )
+                    }
+                if remindMe {
+                    DatePicker("Reminder Time",
+                               selection: $reminderTime.onChange(update),
+                               displayedComponents: .hourAndMinute)
+                }
             }
             Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {
                 Button(project.completed ? "Reopen this Project" : "Close this Project", action: toggleClosed)
@@ -62,6 +83,13 @@ struct EditProjectView: View {
         _title = State(wrappedValue: project.projectTitle)
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
+        if let projectReminderTime = project.reminderTime {
+            _reminderTime = State(wrappedValue: projectReminderTime)
+            _remindMe = State(wrappedValue: true)
+        } else {
+            _reminderTime = State(wrappedValue: Date())
+            _remindMe = State(wrappedValue: false)
+        }
     }
     
 }
@@ -72,6 +100,21 @@ extension EditProjectView {
         project.title = title
         project.detail = detail
         project.color = color
+        if remindMe {
+            project.reminderTime = reminderTime
+            
+            dataController.addReminders(for: project) { success in
+                if success == false {
+                    project.reminderTime = nil
+                    remindMe = false
+                    
+                    showingNotificationsError = true
+                }
+            }
+        } else {
+            project.reminderTime = nil
+            dataController.removeReminders(for: project)
+        }
     }
 
     func delete() {
@@ -125,6 +168,16 @@ extension EditProjectView {
         .accessibilityElement(children: .ignore)
         .accessibilityAddTraits(item == color ? [.isButton, .isButton] : .isButton)
         .accessibilityLabel(LocalizedStringKey(item))
+    }
+    
+    func showAppSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl)
+        }
     }
     
 }
