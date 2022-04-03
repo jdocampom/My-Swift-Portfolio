@@ -17,6 +17,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>co.jdocampom.myPortfolio.newProject</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

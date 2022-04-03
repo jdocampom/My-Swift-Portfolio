@@ -14,7 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var dataController: DataController
     @SceneStorage("selectedView") var selectedView: String?
     
-    private let newProjectActivity = "co.jdocampom.newProject"
+    private let newProjectActivity = "co.jdocampom.myPortfolio.newProject"
     
     var body: some View {
         TabView(selection: $selectedView) {
@@ -47,7 +47,7 @@ struct ContentView: View {
         .onContinueUserActivity(newProjectActivity, perform: createProject)
         .userActivity(newProjectActivity) { activity in
             activity.isEligibleForPrediction = true
-            activity.title = "New Project"
+            activity.title = "Create New Project"
         }
         .onOpenURL(perform: openURL)
     }
