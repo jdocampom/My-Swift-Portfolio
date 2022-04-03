@@ -17,7 +17,8 @@ struct UnlockView: View {
             switch unlockManager.requestState {
             case .loaded(let product):
                 ProductView(product: product)
-            case .failed(_):
+//            case .failed(_):
+            case .failed:
                 Text("Sorry, there was an error loading the store. Please try again later.")
             case .loading:
                 ProgressView("Loading…")
@@ -26,7 +27,6 @@ struct UnlockView: View {
             case .deferred:
                 Text("Thank you! Your request is pending approval, but you can carry on using the app in the meantime.")
             }
-            
             Button("Dismiss", action: dismiss)
         }
         .padding()
@@ -39,7 +39,7 @@ struct UnlockView: View {
     
 }
 
-extension UnlockView{
+extension UnlockView {
     
     func dismiss() {
         presentationMode.wrappedValue.dismiss()

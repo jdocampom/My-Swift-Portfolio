@@ -46,17 +46,10 @@ extension ProjectsView {
         }
         
         func addProject() {
-            let canCreate = dataController.fullVersionUnlocked || dataController.count(for: Project.fetchRequest()) < 3
-            if canCreate {
-                let project = Project(context: dataController.container.viewContext)
-                project.completed = false
-                project.creationDate = Date()
-                dataController.save()
-            } else {
+            if dataController.addProject() == false {
                 showingUnlockView.toggle()
             }
         }
-
         
         func addItem(to project: Project) {
             let item = Item(context: dataController.container.viewContext)
@@ -78,6 +71,7 @@ extension ProjectsView {
             if let newProjects = controller.fetchedObjects as? [Project] {
                 projects = newProjects
             }
+            
         }
         
     }
