@@ -171,6 +171,8 @@
 				861DE21E27E5052B002B1171 /* Item+CoreData.swift */,
 				861DE22027E5075C002B1171 /* Project+CoreData.swift */,
 				8601040F27F9F127007F8F32 /* PurchaseButton.swift */,
+				8601041127F9F382007F8F32 /* ProductView.swift */,
+				8601041327F9F42C007F8F32 /* UnlockView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -267,7 +269,6 @@
 				8651719E27E8E5E2003C6DDC /* Colors.xcassets */,
 				86C504F327E4CC270074EBB8 /* MyPortfolioApp.swift */,
 				86C504F527E4CC270074EBB8 /* ContentView.swift */,
-				8601041127F9F382007F8F32 /* ProductView.swift */,
 			);
 			path = "My Portfolio";
 			sourceTree = "<group>";
@@ -286,7 +287,6 @@
 				86D59C4D27EDFB9700A60DDD /* Home */,
 				86D59C4E27EDFB9C00A60DDD /* Projects */,
 				86D59C4F27EDFBA500A60DDD /* Awards */,
-				8601041327F9F42C007F8F32 /* UnlockView.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
