@@ -7,23 +7,34 @@
 // swiflint:disable: trailing_whitespace
 
 import SwiftUI
+
 @main
 struct MyPortfolioApp: App {
+    
     @StateObject var dataController: DataController
-    init() {
-        let dataController = DataController()
-        _dataController = StateObject(wrappedValue: dataController)
-    }
-        var body: some Scene {
+    @StateObject var unlockManager: UnlockManager
+    
+    var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
+                .environmentObject(unlockManager)
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
                            perform: save)
+                .onAppear(perform: dataController.appLaunched)
         }
     }
+    
+    init() {
+        let dataController = DataController()
+        let unlockManager = UnlockManager(dataController: dataController)
+        _dataController = StateObject(wrappedValue: dataController)
+        _unlockManager = StateObject(wrappedValue: unlockManager)
+    }
+    
     func save(_ note: Notification) {
         dataController.save()
     }
+    
 }

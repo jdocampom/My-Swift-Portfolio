@@ -40,6 +40,9 @@ struct ProjectsView: View {
             .listStyle(InsetGroupedListStyle())
             SelectSomethingView()
         }
+        .sheet(isPresented: $viewModel.showingUnlockView) {
+            UnlockView()
+        }
     }
     
     var addProjectToolbarButton: some ToolbarContent {
