@@ -10,9 +10,7 @@ import CoreSpotlight
 import Foundation
 
 extension HomeView {
-    
     final class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
-        
         private let projectsController: NSFetchedResultsController<Project>
         private let itemsController: NSFetchedResultsController<Item>
         
@@ -44,19 +42,9 @@ extension HomeView {
                 sectionNameKeyPath: nil,
                 cacheName: nil
             )
-            let
-            itemsSortDescriptors = NSSortDescriptor(keyPath: \Item.priority, ascending: false)
-            let completedItemsPredicate = NSPredicate(format: "completed = false")
-            let openProjectPredicate = NSPredicate(format: "completed = false")
-            let itemsPredicate = NSCompoundPredicate(
-                type: .and,
-                subpredicates: [completedItemsPredicate, openProjectPredicate]
-            )
-            let itemsRequest: NSFetchRequest<Item> = Item.fetchRequest()
-            itemsRequest.sortDescriptors = [itemsSortDescriptors]
-            itemsRequest.predicate = itemsPredicate
+            let itemRequest = dataController.fetchRequestForTopItems(count: 10)
             itemsController = NSFetchedResultsController(
-                fetchRequest: itemsRequest,
+                fetchRequest: itemRequest,
                 managedObjectContext: dataController.container.viewContext,
                 sectionNameKeyPath: nil,
                 cacheName: nil
@@ -93,7 +81,5 @@ extension HomeView {
         func selectItem(with identifier: String) {
             selectedItem = dataController.item(with: identifier)
         }
-        
     }
-    
 }

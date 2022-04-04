@@ -26,11 +26,14 @@ struct EditProjectView: View {
     @State private var reminderTime: Date
     
     @State private var engine = try? CHHapticEngine()
-    
     @State private var showingNotificationsError = false
     
     var body: some View {
-        Form {
+        let message1 = "Closing a project moves it from the Open to Closed tab."
+        let message2 = "Deleting it removes the project and any items it contains completely."
+        let alertMessage1 = "Are you sure you want to delete this project?"
+        let alertMessage2 = "By doing so, you will also delete all the items it contains."
+        return Form {
             Section(header: Text("Project Settings")) {
                 TextField("Name", text: $title.onChange(update))
                 TextField("Description", text: $detail.onChange(update))
@@ -57,7 +60,7 @@ struct EditProjectView: View {
                                displayedComponents: .hourAndMinute)
                 }
             }
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab. Deleting it removes the project and any items it contains completely.")) {
+            Section(footer: Text("\(message1) \(message2)")) {
                 Button(project.completed ? "Reopen this Project" : "Close this Project", action: toggleClosed)
                 Button("Delete this Project") {
                     showingDeleteConfirm.toggle()
@@ -71,7 +74,7 @@ struct EditProjectView: View {
             Alert(
                 title: Text("Delete Project"),
                 // swiflint:disable:next line_length
-                message: Text("Are you sure you want to delete this project? By doing so, you will also delete all the items it contains."),
+                message: Text("\(alertMessage1) \(alertMessage2)"),
                 primaryButton: .default(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
             )

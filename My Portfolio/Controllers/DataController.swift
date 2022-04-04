@@ -7,9 +7,9 @@
 
 import CoreData
 import CoreSpotlight
-import UserNotifications
 import StoreKit
 import SwiftUI
+import WidgetKit
 
 /// An environment singleton responsible for managing our CoreData stack, including handling saving,
 /// counting fetch requests, tracking awards and dealing with sample data.
@@ -37,6 +37,11 @@ final class DataController: ObservableObject {
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            let groupID = "group.co.jdocampom.My-Portfolio"
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appendingPathComponent("Main.sqlite")
+            }
         }
         container.loadPersistentStores { _, error in
             if let error = error {
@@ -100,6 +105,7 @@ final class DataController: ObservableObject {
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
@@ -128,26 +134,6 @@ final class DataController: ObservableObject {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
     
-    func hasEarnedAward(_ award: Award) -> Bool {
-        switch award.criterion {
-        case "items":
-            // Returns true if they added a certain amount of items.
-            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-        case "complete":
-            // Returns true if they completed a certain amount of items.
-            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
-            fetchRequest.predicate = NSPredicate(format: "completed = true")
-            let awardCount = count(for: fetchRequest)
-            return awardCount >= award.value
-        default:
-            // Unknown award criterion. The following line with the fatalError shouldn't go into production.
-//            fatalError("Unknown award criterion: \(award.criterion)")
-            return false
-        }
-    }
-    
     func update(_ item: Item) {
         let itemID = item.objectID.uriRepresentation().absoluteString
         let projectID = item.project?.objectID.uriRepresentation().absoluteString
@@ -174,74 +160,6 @@ final class DataController: ObservableObject {
         return try? container.viewContext.existingObject(with: id) as? Item
     }
     
-    func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-            case .notDetermined:
-                self.requestNotifications { success in
-                    if success {
-                        self.placeReminders(for: project, completion: completion)
-                    } else {
-                        DispatchQueue.main.async {
-                            completion(false)
-                        }
-                    }
-                }
-            case .authorized:
-                self.placeReminders(for: project, completion: completion)
-            default:
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-            }
-        }
-    }
-    
-    func removeReminders(for project: Project) {
-        let center = UNUserNotificationCenter.current()
-        let id = project.objectID.uriRepresentation().absoluteString
-        center.removePendingNotificationRequests(withIdentifiers: [id])
-    }
-    
-    private func requestNotifications(completion: @escaping (Bool) -> Void) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            completion(granted)
-        }
-    }
-    
-    private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
-        let content = UNMutableNotificationContent()
-        content.sound = .default
-        content.title = project.projectTitle
-        if let projectDetail = project.detail {
-            content.subtitle = projectDetail
-        }
-        let components = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-        let id = project.objectID.uriRepresentation().absoluteString
-        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { error in
-            DispatchQueue.main.async {
-                if error == nil {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            }
-        }
-    }
-    
-    func appLaunched() {
-        guard count(for: Project.fetchRequest()) >= 5 else { return }
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-        if let windowScene = scene as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: windowScene)
-        }
-    }
-    
     @discardableResult func addProject() -> Bool {
         let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
         
@@ -254,6 +172,21 @@ final class DataController: ObservableObject {
         } else {
             return false
         }
+    }
+    
+    func fetchRequestForTopItems(count: Int) -> NSFetchRequest<Item> {
+        let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        let completedPredicate = NSPredicate(format: "completed = false")
+        let openPredicate = NSPredicate(format: "project.completed = false")
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
+        itemRequest.predicate = compoundPredicate
+        itemRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
+        itemRequest.fetchLimit = count
+        return itemRequest
+    }
+    
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
     
 }
