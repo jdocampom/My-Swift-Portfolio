@@ -34,11 +34,14 @@ struct Provider: TimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
+    
     let date: Date
     let items: [Item]
+    
 }
 
 struct PortfolioWidgetEntryView: View {
+    
     var entry: Provider.Entry
     var body: some View {
         VStack {
@@ -63,10 +66,12 @@ struct PortfolioWidgetEntryView: View {
         }
         .padding(.vertical)
     }
+    
 }
 
 @main
 struct PortfolioWidget: Widget {
+    
     let kind: String = "PortfolioWidget"
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -75,6 +80,7 @@ struct PortfolioWidget: Widget {
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
     }
+    
 }
 
 struct PortfolioWidget_Previews: PreviewProvider {
