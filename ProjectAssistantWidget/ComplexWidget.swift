@@ -42,28 +42,46 @@ struct PortfolioWidgetMultipleEntryView: View {
         }
         return entry.items.prefix(itemCount)
     }
+
     var body: some View {
         VStack(spacing: 5) {
-            ForEach(items) { item in
-                HStack {
-                    Color(item.project?.color ?? "Light Blue")
-                        .frame(width: 5)
-                        .clipShape(Capsule())
-                        .padding(.horizontal)
-                    VStack(alignment: .leading) {
-                        Text(item.itemTitle)
-                            .font(.headline)
-                        if let projectTitle = item.project?.projectTitle {
-                            Text(projectTitle)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
+            if entry.items.isEmpty {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Text("Nothing!")
+                            .font(.subheadline)
+                        Spacer()
                     }
                     Spacer()
                 }
+            } else {
+                ForEach(items) { item in
+                    HStack {
+                        Color(item.project?.color ?? "Light Blue")
+                            .frame(width: 5)
+                            .clipShape(Capsule())
+                            .padding(.horizontal)
+                        VStack(alignment: .leading) {
+                            Text(item.itemTitle)
+                                .font(.headline)
+                                .minimumScaleFactor(0.75)
+                                .lineLimit(1)
+                            if let projectTitle = item.project?.projectTitle {
+                                Text(projectTitle)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                    .minimumScaleFactor(0.75)
+                                    .lineLimit(2)
+                            }
+                        }
+                        Spacer()
+                    }
+                }
+                .padding(.vertical)
             }
         }
-        .padding(.vertical)
     }
 }
 
