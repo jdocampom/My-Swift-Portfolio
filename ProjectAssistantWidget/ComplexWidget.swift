@@ -15,17 +15,11 @@ struct PortfolioWidgetMultipleEntryView: View {
     var items: ArraySlice<Item> {
         let itemCount: Int
         switch widgetFamily {
-        case .systemSmall:
+        case .systemSmall, .systemMedium:
             if dynamicTypeSize < .extraExtraLarge {
                 itemCount = 2
             } else {
                 itemCount = 1
-            }
-        case .systemMedium:
-            if dynamicTypeSize < .extraExtraLarge {
-                itemCount = 3
-            } else {
-                itemCount = 2
             }
         case .systemLarge:
             if dynamicTypeSize < .extraExtraLarge {
@@ -45,6 +39,16 @@ struct PortfolioWidgetMultipleEntryView: View {
 
     var body: some View {
         VStack(spacing: 5) {
+            HStack {
+                Image(systemName: "stopwatch.fill")
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal)
+                Text("Up Next…")
+                    .bold()
+                    .font(.title3)
+                Spacer()
+            }
+            .padding(.vertical)
             if entry.items.isEmpty {
                 VStack {
                     Spacer()
