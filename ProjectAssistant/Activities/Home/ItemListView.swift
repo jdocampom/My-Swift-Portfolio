@@ -10,12 +10,12 @@ import SwiftUI
 struct ItemListView: View {
     
     let title: LocalizedStringKey
-    let items: ArraySlice<Item>
+    @Binding var items: ArraySlice<Item>
     
     var body: some View {
         if items.isEmpty {
-            EmptyView()
-//            Text("There are not any open projects at the moment").foregroundColor(.secondary)
+//            EmptyView()
+            Text("There are not any open projects at the moment").foregroundColor(.secondary)
         } else {
             Text(title)
                 .font(.headline)

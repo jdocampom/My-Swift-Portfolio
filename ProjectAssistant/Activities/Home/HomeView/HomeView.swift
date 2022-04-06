@@ -34,8 +34,8 @@ struct HomeView: View {
                         .fixedSize(horizontal: false, vertical: true)
                     }
                     VStack(alignment: .leading) {
-                        ItemListView(title: "Up Next", items: viewModel.upNext)
-                        ItemListView(title: "More to Explore", items: viewModel.moreToExplore)
+                        ItemListView(title: "Up Next", items: $viewModel.upNext)
+                        ItemListView(title: "More to Explore", items: $viewModel.moreToExplore)
                     }
                     .padding()
                 }
@@ -54,8 +54,11 @@ struct HomeView: View {
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
             #if DEBUG
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button("Add Sample Data", action: viewModel.addSampleData)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Delete All", action: viewModel.dataController.deleteAll)
                 }
             }
             #endif
