@@ -36,6 +36,9 @@ struct SharedProjectsView: View {
                                 }
                             }
                         }
+                        .refreshable {
+                            fetchSharedProjects()
+                        }
                         .listStyle(InsetGroupedListStyle())
                     }
                 }
