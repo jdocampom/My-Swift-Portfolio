@@ -25,8 +25,8 @@ struct SharedProjectsView: View {
                     Text("No results")
                 case .success:
                     VStack {
-                        Spacer()
-                            .frame(height: 10)
+//                        Spacer()
+//                            .frame(height: 10)
                         List(projects) { project in
                             NavigationLink(destination: SharedItemsView(project: project)) {
                                 VStack(alignment: .leading) {
