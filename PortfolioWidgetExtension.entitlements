@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>co.jdocampom.ProjectAssistant</string>
+		<string>group.co.jdocampom.My-Portfolio</string>
 	</array>
 </dict>
 </plist>

@@ -14,6 +14,11 @@
 		8601041427F9F42C007F8F32 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601041327F9F42C007F8F32 /* UnlockView.swift */; };
 		8601041627FA4DF9007F8F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601041527FA4DF9007F8F32 /* AppDelegate.swift */; };
 		8601041827FA4E0A007F8F32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601041727FA4E0A007F8F32 /* SceneDelegate.swift */; };
+		8603777B27FE6BDA00D30758 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777A27FE6BDA00D30758 /* SharedProject.swift */; };
+		8603777D27FE6BF100D30758 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777C27FE6BF100D30758 /* SharedItem.swift */; };
+		8603777F27FE6C2E00D30758 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */; };
+		8603778127FE6C3D00D30758 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778027FE6C3D00D30758 /* LoadState.swift */; };
+		8603778327FE6EFD00D30758 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778227FE6EFD00D30758 /* SharedItemsView.swift */; };
 		860EBEA627EA0E9C00BD95E7 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */; };
 		860EBEA827EA183B00BD95E7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA727EA183B00BD95E7 /* Award.swift */; };
 		860EBEAA27EA191B00BD95E7 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA927EA191B00BD95E7 /* AwardsView.swift */; };
@@ -120,6 +125,11 @@
 		8601041327F9F42C007F8F32 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		8601041527FA4DF9007F8F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8601041727FA4E0A007F8F32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8603777A27FE6BDA00D30758 /* SharedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProject.swift; sourceTree = "<group>"; };
+		8603777C27FE6BF100D30758 /* SharedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
+		8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
+		8603778027FE6C3D00D30758 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		8603778227FE6EFD00D30758 /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
 		860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		860EBEA727EA183B00BD95E7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		860EBEA927EA191B00BD95E7 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
@@ -275,6 +285,8 @@
 			children = (
 				861DE21427E4F5DF002B1171 /* ProjectsView.swift */,
 				868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */,
+				8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */,
+				8603778227FE6EFD00D30758 /* SharedItemsView.swift */,
 			);
 			path = ProjectsView;
 			sourceTree = "<group>";
@@ -350,6 +362,9 @@
 				86C504F327E4CC270074EBB8 /* ProjectAssistantApp.swift */,
 				8601041527FA4DF9007F8F32 /* AppDelegate.swift */,
 				8601041727FA4E0A007F8F32 /* SceneDelegate.swift */,
+				8603777A27FE6BDA00D30758 /* SharedProject.swift */,
+				8603777C27FE6BF100D30758 /* SharedItem.swift */,
+				8603778027FE6C3D00D30758 /* LoadState.swift */,
 			);
 			path = ProjectAssistant;
 			sourceTree = "<group>";
@@ -669,6 +684,7 @@
 				861DE21527E4F5DF002B1171 /* ProjectsView.swift in Sources */,
 				86FC794F27ECD653003E16FE /* ProjectSummaryView.swift in Sources */,
 				8601041827FA4E0A007F8F32 /* SceneDelegate.swift in Sources */,
+				8603778327FE6EFD00D30758 /* SharedItemsView.swift in Sources */,
 				8601041027F9F127007F8F32 /* PurchaseButton.swift in Sources */,
 				8651719D27E8DFF9003C6DDC /* ProjectHeaderView.swift in Sources */,
 				8601041227F9F382007F8F32 /* ProductView.swift in Sources */,
@@ -678,10 +694,13 @@
 				8601040A27F9E304007F8F32 /* UnlockManager.swift in Sources */,
 				86C5050327E4CF580074EBB8 /* Main.xcdatamodeld in Sources */,
 				861DE22127E5075C002B1171 /* Project+CoreData.swift in Sources */,
+				8603777B27FE6BDA00D30758 /* SharedProject.swift in Sources */,
 				865171A327E9139D003C6DDC /* Sequence+Ext.swift in Sources */,
 				86B8A90927FA7EFD00639A14 /* DataController+Ext.swift in Sources */,
+				8603778127FE6C3D00D30758 /* LoadState.swift in Sources */,
 				860EBEAA27EA191B00BD95E7 /* AwardsView.swift in Sources */,
 				865171A127E8EA0D003C6DDC /* EditProjectView.swift in Sources */,
+				8603777D27FE6BF100D30758 /* SharedItem.swift in Sources */,
 				86C5050527E4D2D80074EBB8 /* DataController.swift in Sources */,
 				8651719727E8D33D003C6DDC /* ItemRowView.swift in Sources */,
 				8601041427F9F42C007F8F32 /* UnlockView.swift in Sources */,
@@ -694,6 +713,7 @@
 				861DE21F27E5052B002B1171 /* Item+CoreData.swift in Sources */,
 				8651719527E8D2B4003C6DDC /* EditItemView.swift in Sources */,
 				868E96DA27EF6F3D00B540BA /* ItemRowViewModel.swift in Sources */,
+				8603777F27FE6C2E00D30758 /* SharedProjectsView.swift in Sources */,
 				860EBEAE27EA2D3A00BD95E7 /* Color+Ext.swift in Sources */,
 				868E96D327EEBB2400B540BA /* ProjectsViewModel.swift in Sources */,
 				8651719927E8D81E003C6DDC /* Binding+Ext.swift in Sources */,
