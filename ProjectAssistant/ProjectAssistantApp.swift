@@ -33,6 +33,9 @@ struct ProjectAssistantApp: App {
         let unlockManager = UnlockManager(dataController: dataController)
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+        #if targetEnvironment(simulator)
+        UserDefaults.standard.set("jdocampom", forKey: "username")
+        #endif
     }
     
     func save(_ note: Notification) {

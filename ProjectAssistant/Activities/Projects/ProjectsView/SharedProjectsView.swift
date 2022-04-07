@@ -61,7 +61,6 @@ struct SharedProjectsView: View {
             let detail = record["detail"] as? String ?? ""
             let owner = record["owner"] as? String ?? "No owner"
             let closed = record["closed"] as? Bool ?? false
-            
             let sharedProject = SharedProject(id: id, title: title, detail: detail, owner: owner, closed: closed)
             projects.append(sharedProject)
             loadState = .success

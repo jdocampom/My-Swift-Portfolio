@@ -19,6 +19,7 @@
 		8603777F27FE6C2E00D30758 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */; };
 		8603778127FE6C3D00D30758 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778027FE6C3D00D30758 /* LoadState.swift */; };
 		8603778327FE6EFD00D30758 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778227FE6EFD00D30758 /* SharedItemsView.swift */; };
+		8603778527FE741100D30758 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778427FE741100D30758 /* SignInView.swift */; };
 		860EBEA627EA0E9C00BD95E7 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */; };
 		860EBEA827EA183B00BD95E7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA727EA183B00BD95E7 /* Award.swift */; };
 		860EBEAA27EA191B00BD95E7 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA927EA191B00BD95E7 /* AwardsView.swift */; };
@@ -130,6 +131,7 @@
 		8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
 		8603778027FE6C3D00D30758 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
 		8603778227FE6EFD00D30758 /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
+		8603778427FE741100D30758 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		860EBEA727EA183B00BD95E7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		860EBEA927EA191B00BD95E7 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				86D59C4D27EDFB9700A60DDD /* Home */,
 				86D59C4E27EDFB9C00A60DDD /* Projects */,
 				86D59C4F27EDFBA500A60DDD /* Awards */,
+				8603778427FE741100D30758 /* SignInView.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				860EBEA627EA0E9C00BD95E7 /* Bundle+Ext.swift in Sources */,
 				860EBEAC27EA292D00BD95E7 /* SelectSomethingView.swift in Sources */,
 				868E96D627EF639400B540BA /* HomeViewModel.swift in Sources */,
+				8603778527FE741100D30758 /* SignInView.swift in Sources */,
 				8601040A27F9E304007F8F32 /* UnlockManager.swift in Sources */,
 				86C5050327E4CF580074EBB8 /* Main.xcdatamodeld in Sources */,
 				861DE22127E5075C002B1171 /* Project+CoreData.swift in Sources */,
