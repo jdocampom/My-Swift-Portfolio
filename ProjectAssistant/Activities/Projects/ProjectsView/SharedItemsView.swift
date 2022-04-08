@@ -12,6 +12,8 @@ struct SharedItemsView: View {
     
     let project: SharedProject
     
+    @State private var cloudError: CloudError?
+    
     @State private var items = [SharedItem]()
     @State private var itemsLoadState = LoadState.inactive
     
@@ -84,6 +86,12 @@ struct SharedItemsView: View {
             fetchSharedItems()
             fetchChatMessages()
         }
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("Error"),
+                message: Text(error.message)
+            )
+        }
     }
     
     func fetchSharedItems() {
@@ -108,7 +116,10 @@ struct SharedItemsView: View {
             items.append(sharedItem)
             itemsLoadState = .success
         }
-        operation.queryCompletionBlock = { _, _ in
+        operation.queryCompletionBlock = { _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
             if items.isEmpty {
                 itemsLoadState = .noResults
             }
@@ -124,18 +135,16 @@ struct SharedItemsView: View {
         let text = newChatText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard text.count > 2 else { return }
         guard let username = username else { return }
-        
         let message = CKRecord(recordType: "Message")
         message["from"] = username
         message["text"] = text
         let backupChatText = newChatText
         newChatText = ""
-        
         let projectID = CKRecord.ID(recordName: project.id)
         message["project"] = CKRecord.Reference(recordID: projectID, action: .deleteSelf)
         CKContainer.default().publicCloudDatabase.save(message) { record, error in
             if let error = error {
-                print(error.localizedDescription)
+                cloudError = error.getCloudKitError()
                 newChatText = backupChatText
             } else if let record = record {
                 let message = ChatMessage(from: record)
@@ -147,29 +156,27 @@ struct SharedItemsView: View {
     func fetchChatMessages() {
         guard messagesLoadState == .inactive else { return }
         messagesLoadState = .loading
-        
         let recordID = CKRecord.ID(recordName: project.id)
         let reference = CKRecord.Reference(recordID: recordID, action: .none)
         let pred = NSPredicate(format: "project == %@", reference)
         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         let query = CKQuery(recordType: "Message", predicate: pred)
         query.sortDescriptors = [sort]
-        
         let operation = CKQueryOperation(query: query)
         operation.desiredKeys = ["from", "text"]
-        
         operation.recordFetchedBlock = { record in
             let message = ChatMessage(from: record)
             messages.append(message)
             messagesLoadState = .success
         }
-        
-        operation.queryCompletionBlock = { _, _ in
+        operation.queryCompletionBlock = { _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
             if messages.isEmpty {
                 messagesLoadState = .noResults
             }
         }
-        
         CKContainer.default().publicCloudDatabase.add(operation)
     }
     

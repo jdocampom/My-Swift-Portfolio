@@ -16,6 +16,8 @@ struct EditProjectView: View {
     }
     
     @State private var cloudStatus = CloudStatus.checking
+    @State private var cloudError: CloudError?
+    
     
     private let colorColumns = [GridItem(.adaptive(minimum: 44))]
     
@@ -96,6 +98,12 @@ struct EditProjectView: View {
         }
         .onAppear(perform: updateCloudStatus)
         .onDisappear(perform: dataController.save)
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("Error"),
+                message: Text(error.message)
+            )
+        }
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
                 title: Text("Delete Project"),
@@ -131,7 +139,6 @@ extension EditProjectView {
         project.color = color
         if remindMe {
             project.reminderTime = reminderTime
-            
             dataController.addReminders(for: project) { success in
                 if success == false {
                     project.reminderTime = nil
@@ -214,8 +221,10 @@ extension EditProjectView {
             let records = project.prepareCloudRecords(owner: username)
             let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
             operation.savePolicy = .allKeys
-            
             operation.modifyRecordsCompletionBlock = { _, _, error in
+                if let error = error {
+                    cloudError = error.getCloudKitError()
+                }
                 updateCloudStatus()
             }
             cloudStatus = .checking
@@ -239,7 +248,10 @@ extension EditProjectView {
         let name = project.objectID.uriRepresentation().absoluteString
         let id = CKRecord.ID(recordName: name)
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
-        operation.modifyRecordsCompletionBlock = { _, _, _ in
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
             updateCloudStatus()
         }
         cloudStatus = .checking

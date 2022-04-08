@@ -45,6 +45,8 @@
 		86784F1527EE7A83005EC3A6 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1427EE7A83005EC3A6 /* PerformanceTests.swift */; };
 		86784F1D27EE816B005EC3A6 /* MyPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1C27EE816B005EC3A6 /* MyPortfolioUITests.swift */; };
 		86784F1F27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86784F1E27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift */; };
+		8686740027FFC7F40041247E /* Error-CloudKitMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */; };
+		8686740227FFC9700041247E /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686740127FFC9700041247E /* CloudError.swift */; };
 		868E96D327EEBB2400B540BA /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */; };
 		868E96D627EF639400B540BA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D527EF639400B540BA /* HomeViewModel.swift */; };
 		868E96DA27EF6F3D00B540BA /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */; };
@@ -162,6 +164,8 @@
 		86784F1A27EE816A005EC3A6 /* ProjectAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86784F1C27EE816B005EC3A6 /* MyPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITests.swift; sourceTree = "<group>"; };
 		86784F1E27EE816B005EC3A6 /* MyPortfolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error-CloudKitMessages.swift"; sourceTree = "<group>"; };
+		8686740127FFC9700041247E /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		868E96D527EF639400B540BA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				8601040F27F9F127007F8F32 /* PurchaseButton.swift */,
 				8601041127F9F382007F8F32 /* ProductView.swift */,
 				8601041327F9F42C007F8F32 /* UnlockView.swift */,
+				868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */,
+				8686740127FFC9700041247E /* CloudError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				861DE21527E4F5DF002B1171 /* ProjectsView.swift in Sources */,
 				86FC794F27ECD653003E16FE /* ProjectSummaryView.swift in Sources */,
 				8601041827FA4E0A007F8F32 /* SceneDelegate.swift in Sources */,
+				8686740227FFC9700041247E /* CloudError.swift in Sources */,
 				8603778327FE6EFD00D30758 /* SharedItemsView.swift in Sources */,
 				8601041027F9F127007F8F32 /* PurchaseButton.swift in Sources */,
 				8651719D27E8DFF9003C6DDC /* ProjectHeaderView.swift in Sources */,
@@ -716,6 +723,7 @@
 				8603778127FE6C3D00D30758 /* LoadState.swift in Sources */,
 				860EBEAA27EA191B00BD95E7 /* AwardsView.swift in Sources */,
 				865171A127E8EA0D003C6DDC /* EditProjectView.swift in Sources */,
+				8686740027FFC7F40041247E /* Error-CloudKitMessages.swift in Sources */,
 				8603777D27FE6BF100D30758 /* SharedItem.swift in Sources */,
 				86C5050527E4D2D80074EBB8 /* DataController.swift in Sources */,
 				8651719727E8D33D003C6DDC /* ItemRowView.swift in Sources */,
