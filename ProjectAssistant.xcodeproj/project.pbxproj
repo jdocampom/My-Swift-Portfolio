@@ -31,6 +31,54 @@
 		861DE21527E4F5DF002B1171 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE21427E4F5DF002B1171 /* ProjectsView.swift */; };
 		861DE21F27E5052B002B1171 /* Item+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE21E27E5052B002B1171 /* Item+CoreData.swift */; };
 		861DE22127E5075C002B1171 /* Project+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE22027E5075C002B1171 /* Project+CoreData.swift */; };
+		8646ED1928022C05006654A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8646ED1828022C05006654A8 /* Assets.xcassets */; };
+		8646ED1C28022C05006654A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8646ED1B28022C05006654A8 /* Preview Assets.xcassets */; };
+		8646ED2228022D09006654A8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8646ED2128022D09006654A8 /* CloudKit.framework */; };
+		8646ED2328022DAE006654A8 /* ProjectAssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C504F327E4CC270074EBB8 /* ProjectAssistantApp.swift */; };
+		8646ED2428022DB6006654A8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C5050427E4D2D80074EBB8 /* DataController.swift */; };
+		8646ED2528022DB6006654A8 /* DataController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8A90827FA7EFD00639A14 /* DataController+Ext.swift */; };
+		8646ED2628022DD3006654A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE21227E4F517002B1171 /* HomeView.swift */; };
+		8646ED2728022DD3006654A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D527EF639400B540BA /* HomeViewModel.swift */; };
+		8646ED2828022DD3006654A8 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC794C27ECD558003E16FE /* ItemListView.swift */; };
+		8646ED2928022DD3006654A8 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC794E27ECD653003E16FE /* ProjectSummaryView.swift */; };
+		8646ED2A28022DE4006654A8 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778227FE6EFD00D30758 /* SharedItemsView.swift */; };
+		8646ED2B28022DE4006654A8 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719427E8D2B4003C6DDC /* EditItemView.swift */; };
+		8646ED2C28022DE4006654A8 /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */; };
+		8646ED2D28022DE4006654A8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE21427E4F5DF002B1171 /* ProjectsView.swift */; };
+		8646ED2E28022DE4006654A8 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865171A027E8EA0D003C6DDC /* EditProjectView.swift */; };
+		8646ED2F28022DE4006654A8 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */; };
+		8646ED3028022DE4006654A8 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEAB27EA292D00BD95E7 /* SelectSomethingView.swift */; };
+		8646ED3128022DE4006654A8 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719627E8D33D003C6DDC /* ItemRowView.swift */; };
+		8646ED3228022DE4006654A8 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */; };
+		8646ED3328022DE4006654A8 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719C27E8DFF9003C6DDC /* ProjectHeaderView.swift */; };
+		8646ED3428022DEF006654A8 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA927EA191B00BD95E7 /* AwardsView.swift */; };
+		8646ED3528022DEF006654A8 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA727EA183B00BD95E7 /* Award.swift */; };
+		8646ED3628022DF3006654A8 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794927EB9B44003E16FE /* Awards.json */; };
+		8646ED3728022E03006654A8 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86C5050127E4CF580074EBB8 /* Main.xcdatamodeld */; };
+		8646ED3828022E06006654A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794127EB9AF4003E16FE /* Localizable.strings */; };
+		8646ED3928022E06006654A8 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794527EB9B2F003E16FE /* Localizable.stringsdict */; };
+		8646ED3A28022E0D006654A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C504F527E4CC270074EBB8 /* ContentView.swift */; };
+		8646ED3B28022E12006654A8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8651719E27E8E5E2003C6DDC /* Colors.xcassets */; };
+		8646ED3C28022E37006654A8 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601040927F9E304007F8F32 /* UnlockManager.swift */; };
+		8646ED3D28022E54006654A8 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686740127FFC9700041247E /* CloudError.swift */; };
+		8646ED3E28022E54006654A8 /* Item+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE21E27E5052B002B1171 /* Item+CoreData.swift */; };
+		8646ED3F28022E54006654A8 /* Error-CloudKitMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */; };
+		8646ED4028022E54006654A8 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601040F27F9F127007F8F32 /* PurchaseButton.swift */; };
+		8646ED4128022E54006654A8 /* Project+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DE22027E5075C002B1171 /* Project+CoreData.swift */; };
+		8646ED4228022E54006654A8 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601041127F9F382007F8F32 /* ProductView.swift */; };
+		8646ED4328022E54006654A8 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601041327F9F42C007F8F32 /* UnlockView.swift */; };
+		8646ED4428022E5B006654A8 /* Sequence+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865171A227E9139D003C6DDC /* Sequence+Ext.swift */; };
+		8646ED4528022E5B006654A8 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBEA527EA0E9C00BD95E7 /* Bundle+Ext.swift */; };
+		8646ED4728022E5B006654A8 /* SKProduct+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601040D27F9F0F3007F8F32 /* SKProduct+Ext.swift */; };
+		8646ED4828022E5B006654A8 /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719827E8D81E003C6DDC /* Binding+Ext.swift */; };
+		8646ED4928022E5E006654A8 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778427FE741100D30758 /* SignInView.swift */; };
+		8646ED4A28022E7F006654A8 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860906E427FF323B009738FF /* ChatMessage.swift */; };
+		8646ED4D28022F0D006654A8 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646ED4C28022F0D006654A8 /* PlatformAdjustments.swift */; };
+		8646ED4F28023011006654A8 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646ED4E28023011006654A8 /* PlatformAdjustments.swift */; };
+		8646ED51280230B9006654A8 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646ED50280230B9006654A8 /* Color+Ext.swift */; };
+		8646ED5228023149006654A8 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778027FE6C3D00D30758 /* LoadState.swift */; };
+		8646ED5328023153006654A8 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777A27FE6BDA00D30758 /* SharedProject.swift */; };
+		8646ED542802315C006654A8 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777C27FE6BF100D30758 /* SharedItem.swift */; };
 		8651719527E8D2B4003C6DDC /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719427E8D2B4003C6DDC /* EditItemView.swift */; };
 		8651719727E8D33D003C6DDC /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719627E8D33D003C6DDC /* ItemRowView.swift */; };
 		8651719927E8D81E003C6DDC /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719827E8D81E003C6DDC /* Binding+Ext.swift */; };
@@ -147,6 +195,14 @@
 		861DE21427E4F5DF002B1171 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		861DE21E27E5052B002B1171 /* Item+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreData.swift"; sourceTree = "<group>"; };
 		861DE22027E5075C002B1171 /* Project+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreData.swift"; sourceTree = "<group>"; };
+		8646ED1228022C03006654A8 /* ProjectAssistantMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAssistantMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8646ED1828022C05006654A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8646ED1B28022C05006654A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8646ED1D28022C05006654A8 /* ProjectAssistantMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectAssistantMac.entitlements; sourceTree = "<group>"; };
+		8646ED2128022D09006654A8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		8646ED4C28022F0D006654A8 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
+		8646ED4E28023011006654A8 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
+		8646ED50280230B9006654A8 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		8651719427E8D2B4003C6DDC /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		8651719627E8D33D003C6DDC /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		8651719827E8D81E003C6DDC /* Binding+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Ext.swift"; sourceTree = "<group>"; };
@@ -202,6 +258,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8646ED0F28022C03006654A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8646ED2228022D09006654A8 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86784F1727EE816A005EC3A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,22 +300,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		860906E327FF322E009738FF /* Chat */ = {
+		860906E327FF322E009738FF /* Community */ = {
 			isa = PBXGroup;
 			children = (
 				860906E427FF323B009738FF /* ChatMessage.swift */,
 			);
-			path = Chat;
+			path = Community;
 			sourceTree = "<group>";
 		};
 		861DE20F27E4DD5C002B1171 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8646ED2128022D09006654A8 /* CloudKit.framework */,
 				861DE21027E4DD5C002B1171 /* CloudKit.framework */,
 				86B8A8ED27FA7B5500639A14 /* WidgetKit.framework */,
 				86B8A8EF27FA7B5500639A14 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8646ED1328022C03006654A8 /* ProjectAssistantMac */ = {
+			isa = PBXGroup;
+			children = (
+				8646ED1D28022C05006654A8 /* ProjectAssistantMac.entitlements */,
+				8646ED4C28022F0D006654A8 /* PlatformAdjustments.swift */,
+				8646ED1828022C05006654A8 /* Assets.xcassets */,
+				8646ED1A28022C05006654A8 /* Preview Content */,
+				8646ED50280230B9006654A8 /* Color+Ext.swift */,
+			);
+			path = ProjectAssistantMac;
+			sourceTree = "<group>";
+		};
+		8646ED1A28022C05006654A8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8646ED1B28022C05006654A8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		8651719A27E8D876003C6DDC /* Helpers */ = {
@@ -348,6 +433,7 @@
 				86D59C5927EE090600A60DDD /* ProjectAssistantTests */,
 				86784F1B27EE816B005EC3A6 /* ProjectAssistantUITests */,
 				86B8A8F127FA7B5500639A14 /* ProjectAssistantWidget */,
+				8646ED1328022C03006654A8 /* ProjectAssistantMac */,
 				86C504F127E4CC270074EBB8 /* Products */,
 				861DE20F27E4DD5C002B1171 /* Frameworks */,
 			);
@@ -360,6 +446,7 @@
 				86D59C5827EE090600A60DDD /* ProjectAssistantTests.xctest */,
 				86784F1A27EE816A005EC3A6 /* ProjectAssistantUITests.xctest */,
 				86B8A8EC27FA7B5500639A14 /* ProjectAssistantWidgetExtension.appex */,
+				8646ED1228022C03006654A8 /* ProjectAssistantMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,22 +454,23 @@
 		86C504F227E4CC270074EBB8 /* ProjectAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				8601041527FA4DF9007F8F32 /* AppDelegate.swift */,
+				86C504F527E4CC270074EBB8 /* ContentView.swift */,
+				8603778027FE6C3D00D30758 /* LoadState.swift */,
+				8646ED4E28023011006654A8 /* PlatformAdjustments.swift */,
+				86C504F327E4CC270074EBB8 /* ProjectAssistantApp.swift */,
+				8601041727FA4E0A007F8F32 /* SceneDelegate.swift */,
+				8603777C27FE6BF100D30758 /* SharedItem.swift */,
+				8603777A27FE6BDA00D30758 /* SharedProject.swift */,
+				86C504F727E4CC290074EBB8 /* Assets.xcassets */,
+				8651719E27E8E5E2003C6DDC /* Colors.xcassets */,
 				86D59C4C27EDFB7F00A60DDD /* Activities */,
+				86D59C5127EDFD4600A60DDD /* Configuration */,
+				86D59C5027EDFD3300A60DDD /* Controllers */,
 				8651719B27E8D883003C6DDC /* Extensions */,
 				8651719A27E8D876003C6DDC /* Helpers */,
 				86FC794B27ECD16B003E16FE /* Localization */,
 				86C504F927E4CC290074EBB8 /* Preview Content */,
-				86D59C5027EDFD3300A60DDD /* Controllers */,
-				86D59C5127EDFD4600A60DDD /* Configuration */,
-				86C504F727E4CC290074EBB8 /* Assets.xcassets */,
-				8651719E27E8E5E2003C6DDC /* Colors.xcassets */,
-				86C504F527E4CC270074EBB8 /* ContentView.swift */,
-				86C504F327E4CC270074EBB8 /* ProjectAssistantApp.swift */,
-				8601041527FA4DF9007F8F32 /* AppDelegate.swift */,
-				8601041727FA4E0A007F8F32 /* SceneDelegate.swift */,
-				8603777A27FE6BDA00D30758 /* SharedProject.swift */,
-				8603777C27FE6BF100D30758 /* SharedItem.swift */,
-				8603778027FE6C3D00D30758 /* LoadState.swift */,
 			);
 			path = ProjectAssistant;
 			sourceTree = "<group>";
@@ -398,7 +486,7 @@
 		86D59C4C27EDFB7F00A60DDD /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				860906E327FF322E009738FF /* Chat */,
+				860906E327FF322E009738FF /* Community */,
 				86D59C4D27EDFB9700A60DDD /* Home */,
 				86D59C4E27EDFB9C00A60DDD /* Projects */,
 				86D59C4F27EDFBA500A60DDD /* Awards */,
@@ -488,6 +576,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8646ED1128022C03006654A8 /* ProjectAssistantMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8646ED2028022C05006654A8 /* Build configuration list for PBXNativeTarget "ProjectAssistantMac" */;
+			buildPhases = (
+				8646ED0E28022C03006654A8 /* Sources */,
+				8646ED0F28022C03006654A8 /* Frameworks */,
+				8646ED1028022C03006654A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectAssistantMac;
+			productName = ProjectAssistantMac;
+			productReference = 8646ED1228022C03006654A8 /* ProjectAssistantMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		86784F1927EE816A005EC3A6 /* ProjectAssistantUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86784F2227EE816B005EC3A6 /* Build configuration list for PBXNativeTarget "ProjectAssistantUITests" */;
@@ -571,6 +676,9 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					8646ED1128022C03006654A8 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					86784F1927EE816A005EC3A6 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 86C504EF27E4CC270074EBB8;
@@ -605,11 +713,25 @@
 				86D59C5727EE090600A60DDD /* ProjectAssistantTests */,
 				86784F1927EE816A005EC3A6 /* ProjectAssistantUITests */,
 				86B8A8EB27FA7B5500639A14 /* ProjectAssistantWidgetExtension */,
+				8646ED1128022C03006654A8 /* ProjectAssistantMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8646ED1028022C03006654A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8646ED1C28022C05006654A8 /* Preview Assets.xcassets in Resources */,
+				8646ED3828022E06006654A8 /* Localizable.strings in Resources */,
+				8646ED3628022DF3006654A8 /* Awards.json in Resources */,
+				8646ED3B28022E12006654A8 /* Colors.xcassets in Resources */,
+				8646ED3928022E06006654A8 /* Localizable.stringsdict in Resources */,
+				8646ED1928022C05006654A8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86784F1827EE816A005EC3A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -672,6 +794,53 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8646ED0E28022C03006654A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8646ED2328022DAE006654A8 /* ProjectAssistantApp.swift in Sources */,
+				8646ED2928022DD3006654A8 /* ProjectSummaryView.swift in Sources */,
+				8646ED3A28022E0D006654A8 /* ContentView.swift in Sources */,
+				8646ED3428022DEF006654A8 /* AwardsView.swift in Sources */,
+				8646ED4228022E54006654A8 /* ProductView.swift in Sources */,
+				8646ED3D28022E54006654A8 /* CloudError.swift in Sources */,
+				8646ED2828022DD3006654A8 /* ItemListView.swift in Sources */,
+				8646ED4728022E5B006654A8 /* SKProduct+Ext.swift in Sources */,
+				8646ED4A28022E7F006654A8 /* ChatMessage.swift in Sources */,
+				8646ED542802315C006654A8 /* SharedItem.swift in Sources */,
+				8646ED3028022DE4006654A8 /* SelectSomethingView.swift in Sources */,
+				8646ED4D28022F0D006654A8 /* PlatformAdjustments.swift in Sources */,
+				8646ED2628022DD3006654A8 /* HomeView.swift in Sources */,
+				8646ED2C28022DE4006654A8 /* ItemRowViewModel.swift in Sources */,
+				8646ED2A28022DE4006654A8 /* SharedItemsView.swift in Sources */,
+				8646ED3C28022E37006654A8 /* UnlockManager.swift in Sources */,
+				8646ED2428022DB6006654A8 /* DataController.swift in Sources */,
+				8646ED51280230B9006654A8 /* Color+Ext.swift in Sources */,
+				8646ED4028022E54006654A8 /* PurchaseButton.swift in Sources */,
+				8646ED3228022DE4006654A8 /* ProjectsViewModel.swift in Sources */,
+				8646ED2728022DD3006654A8 /* HomeViewModel.swift in Sources */,
+				8646ED4328022E54006654A8 /* UnlockView.swift in Sources */,
+				8646ED4528022E5B006654A8 /* Bundle+Ext.swift in Sources */,
+				8646ED2E28022DE4006654A8 /* EditProjectView.swift in Sources */,
+				8646ED2528022DB6006654A8 /* DataController+Ext.swift in Sources */,
+				8646ED2D28022DE4006654A8 /* ProjectsView.swift in Sources */,
+				8646ED3728022E03006654A8 /* Main.xcdatamodeld in Sources */,
+				8646ED3328022DE4006654A8 /* ProjectHeaderView.swift in Sources */,
+				8646ED4428022E5B006654A8 /* Sequence+Ext.swift in Sources */,
+				8646ED3E28022E54006654A8 /* Item+CoreData.swift in Sources */,
+				8646ED2B28022DE4006654A8 /* EditItemView.swift in Sources */,
+				8646ED5328023153006654A8 /* SharedProject.swift in Sources */,
+				8646ED3F28022E54006654A8 /* Error-CloudKitMessages.swift in Sources */,
+				8646ED4928022E5E006654A8 /* SignInView.swift in Sources */,
+				8646ED2F28022DE4006654A8 /* SharedProjectsView.swift in Sources */,
+				8646ED4128022E54006654A8 /* Project+CoreData.swift in Sources */,
+				8646ED3128022DE4006654A8 /* ItemRowView.swift in Sources */,
+				8646ED5228023149006654A8 /* LoadState.swift in Sources */,
+				8646ED3528022DEF006654A8 /* Award.swift in Sources */,
+				8646ED4828022E5B006654A8 /* Binding+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86784F1627EE816A005EC3A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,6 +871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				861DE21527E4F5DF002B1171 /* ProjectsView.swift in Sources */,
+				8646ED4F28023011006654A8 /* PlatformAdjustments.swift in Sources */,
 				86FC794F27ECD653003E16FE /* ProjectSummaryView.swift in Sources */,
 				8601041827FA4E0A007F8F32 /* SceneDelegate.swift in Sources */,
 				8686740227FFC9700041247E /* CloudError.swift in Sources */,
@@ -810,6 +980,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8646ED1E28022C05006654A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectAssistantMac/ProjectAssistantMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ProjectAssistantMac/Preview Content\"";
+				DEVELOPMENT_TEAM = D27X6VQP35;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jdocampom.ProjectAssistantMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8646ED1F28022C05006654A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectAssistantMac/ProjectAssistantMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ProjectAssistantMac/Preview Content\"";
+				DEVELOPMENT_TEAM = D27X6VQP35;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jdocampom.ProjectAssistantMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		86784F2327EE816B005EC3A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -950,7 +1178,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1004,7 +1233,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1117,6 +1347,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8646ED2028022C05006654A8 /* Build configuration list for PBXNativeTarget "ProjectAssistantMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8646ED1E28022C05006654A8 /* Debug */,
+				8646ED1F28022C05006654A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		86784F2227EE816B005EC3A6 /* Build configuration list for PBXNativeTarget "ProjectAssistantUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

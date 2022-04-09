@@ -14,8 +14,6 @@ struct ProjectsView: View {
     
     @StateObject var viewModel: ViewModel
     
-    @State private var showingSortOrder = false
-    
     var projectsList: some View {
         Group {
             List {
@@ -46,7 +44,7 @@ struct ProjectsView: View {
     }
     
     var addProjectToolbarButton: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .primaryAction) {
             if !viewModel.showClosedProjects {
                 Button {
                     withAnimation {
@@ -60,10 +58,16 @@ struct ProjectsView: View {
     }
     
     var sortItemsToolbarButton: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
-            Button { showingSortOrder.toggle() } label: {
-                Label("Sort Items", systemImage: "arrow.up.arrow.down")
+        ToolbarItem(placement: .cancellationAction) {
+            Menu {
+                Button("Automatic") { viewModel.sortOrder = .optimized }
+                Button("Creation Date") { viewModel.sortOrder = .creationDate }
+                Button("Title") { viewModel.sortOrder = .title }
+               
             }
+        label: {
+            Label("Sort Items", systemImage: "arrow.up.arrow.down")
+        }
         }
     }
     
@@ -82,14 +86,7 @@ struct ProjectsView: View {
                 addProjectToolbarButton
                 sortItemsToolbarButton
             }
-            .actionSheet(isPresented: $showingSortOrder) {
-                ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
-                    .default(Text("Automatic")) { viewModel.sortOrder = .optimized },
-                    .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
-                    .default(Text("Title")) { viewModel.sortOrder = .title },
-                    .cancel()
-                ])
-            }
+            
             .onOpenURL(perform: openURL)
         }
     }

@@ -54,10 +54,10 @@ struct HomeView: View {
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
             #if DEBUG
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button("Add Sample Data", action: viewModel.addSampleData)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button("Delete All", action: viewModel.dataController.deleteAll)
                 }
             }
