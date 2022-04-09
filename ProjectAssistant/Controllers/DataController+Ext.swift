@@ -36,6 +36,9 @@ extension DataController {
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
+        case "chat":
+            // returns true if they posted a certain number of chat messages
+            return UserDefaults.standard.integer(forKey: "chatCount") >= award.value
         default:
             // Unknown award criterion. The following line with the fatalError shouldn't go into production.
             //            fatalError("Unknown award criterion: \(award.criterion)")

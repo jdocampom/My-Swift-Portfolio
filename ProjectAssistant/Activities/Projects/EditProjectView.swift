@@ -18,7 +18,6 @@ struct EditProjectView: View {
     @State private var cloudStatus = CloudStatus.checking
     @State private var cloudError: CloudError?
     
-    
     private let colorColumns = [GridItem(.adaptive(minimum: 44))]
     
     @AppStorage("username") var username: String?
@@ -78,6 +77,15 @@ struct EditProjectView: View {
                     showingDeleteConfirm.toggle()
                 }
                 .accentColor(.red)
+                .alert(isPresented: $showingDeleteConfirm) {
+                    Alert(
+                        title: Text("Delete Project"),
+                        // swiflint:disable:next line_length
+                        message: Text("\(alertMessage1) \(alertMessage2)"),
+                        primaryButton: .default(Text("Delete"), action: delete),
+                        secondaryButton: .cancel()
+                    )
+                }
             }
         }
         .navigationTitle("Edit Project")
@@ -87,7 +95,9 @@ struct EditProjectView: View {
             case .checking:
                 ProgressView()
             case .exists:
-                Button(action: removeFromCloud) {
+                Button {
+                    removeFromCloud(deleteLocal: false)
+                } label: {
                     Label("Remove from iCloud", systemImage: "icloud.slash")
                 }
             case .absent:
@@ -102,15 +112,6 @@ struct EditProjectView: View {
             Alert(
                 title: Text("Error"),
                 message: Text(error.message)
-            )
-        }
-        .alert(isPresented: $showingDeleteConfirm) {
-            Alert(
-                title: Text("Delete Project"),
-                // swiflint:disable:next line_length
-                message: Text("\(alertMessage1) \(alertMessage2)"),
-                primaryButton: .default(Text("Delete"), action: delete),
-                secondaryButton: .cancel()
             )
         }
     }
@@ -154,9 +155,12 @@ extension EditProjectView {
     }
     
     func delete() {
-        dataController.delete(project)
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
-        presentationMode.wrappedValue.dismiss()
+        if cloudStatus == .exists {
+            removeFromCloud(deleteLocal: true)
+        } else {
+            dataController.delete(project)
+            presentationMode.wrappedValue.dismiss()
+        }
     }
     
     func toggleClosed() {
@@ -244,13 +248,18 @@ extension EditProjectView {
         }
     }
     
-    func removeFromCloud() {
+    func removeFromCloud(deleteLocal: Bool) {
         let name = project.objectID.uriRepresentation().absoluteString
         let id = CKRecord.ID(recordName: name)
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
         operation.modifyRecordsCompletionBlock = { _, _, error in
             if let error = error {
                 cloudError = error.getCloudKitError()
+            } else {
+                if deleteLocal {
+                    dataController.delete(project)
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             updateCloudStatus()
         }

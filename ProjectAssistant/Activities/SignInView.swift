@@ -28,13 +28,9 @@ struct SignInView: View {
                 case .unknown:
                     VStack(alignment: .leading) {
                         ScrollView {
-                            VStack(alignment: .leading) {
-                                Text("In order to keep our community safe, we ask that you sign in before commenting on a project.")
-                                Spacer().frame(width: 10)
-                                Text("We don't track your personal information; your name is used only for display purposes.")
-                                Spacer().frame(width: 10)
-                                Text("Please note: we reserve the right to remove messages that are inappropriate or offensive.")
-                            }
+                            // swiftlint:disable line_length
+                            Text("In order to keep our community safe, we ask that you sign in before commenting on a project.\n\nWe don't track your personal information; your name is used for display purposes only.\n\nPlease note: we reserve the right to remove messages that are inappropriate or offensive.")
+                                .multilineTextAlignment(.leading)
                         }
                         
                         Spacer()

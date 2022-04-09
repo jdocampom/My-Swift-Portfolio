@@ -12,6 +12,8 @@ struct SharedItemsView: View {
     
     let project: SharedProject
     
+    @AppStorage("chatCount") var chatCount = 0
+    
     @State private var cloudError: CloudError?
     
     @State private var items = [SharedItem]()
@@ -149,6 +151,7 @@ struct SharedItemsView: View {
             } else if let record = record {
                 let message = ChatMessage(from: record)
                 messages.append(message)
+                chatCount += 1
             }
         }
     }

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CloudError: Identifiable, ExpressibleByStringInterpolation {
+    var localizedMessage: LocalizedStringKey { LocalizedStringKey(message) }
     var id: String { message }
     var message: String
     
