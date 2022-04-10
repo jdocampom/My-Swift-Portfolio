@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ItemListView: View {
-    
     let title: LocalizedStringKey
     @Binding var items: ArraySlice<Item>
-    
+
     var body: some View {
         if items.isEmpty {
             EmptyView()
@@ -47,5 +46,4 @@ struct ItemListView: View {
             }
         }
     }
-    
 }

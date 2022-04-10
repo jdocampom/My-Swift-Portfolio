@@ -8,9 +8,7 @@
 import Foundation
 
 extension ItemRowView {
-    
     final class ViewModel: ObservableObject {
-
         let project: Project
         let item: Item
         
@@ -84,7 +82,5 @@ extension ItemRowView {
             self.project = project
             self.item = item
         }
-        
     }
-    
 }

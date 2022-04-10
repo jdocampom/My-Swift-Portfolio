@@ -9,7 +9,6 @@ import Combine
 import StoreKit
 
 class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {
-    
     enum RequestState {
         case loading
         case loaded(SKProduct)
@@ -91,5 +90,4 @@ class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, S
     func restore() {
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
-    
 }

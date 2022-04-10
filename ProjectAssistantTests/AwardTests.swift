@@ -6,8 +6,8 @@
 //
 
 import CoreData
-import XCTest
 @testable import My_Portfolio
+import XCTest
 
 class AwardTests: BaseTestCase {
     let awards = Award.allAwards
@@ -52,5 +52,4 @@ class AwardTests: BaseTestCase {
             dataController.clearAll()
         }
     }
-    
 }

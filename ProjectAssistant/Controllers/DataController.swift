@@ -14,7 +14,6 @@ import WidgetKit
 /// An environment singleton responsible for managing our CoreData stack, including handling saving,
 /// counting fetch requests, tracking awards and dealing with sample data.
 final class DataController: ObservableObject {
-    
     /// The lone CloudKit Container used to store our data.
     let container: NSPersistentCloudKitContainer
     
@@ -82,7 +81,7 @@ final class DataController: ObservableObject {
     
     /// Creates example projects with items to make manual testing easier.
     /// - Throws: An NSError sent from calling `save()` on the `NSManagedObjectContext`
-    func createSampleData () throws {
+    func createSampleData() throws {
         let viewContext = container.viewContext
         for projectCounter in 1...5 {
             let project = Project(context: viewContext)
@@ -199,5 +198,4 @@ final class DataController: ObservableObject {
     func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
         return (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
-    
 }

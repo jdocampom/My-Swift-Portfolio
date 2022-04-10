@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ItemRowView: View {
-    
     @StateObject var viewModel: ViewModel
     @ObservedObject var item: Item
         
@@ -54,7 +53,6 @@ struct ItemRowView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.item = item
     }
-    
 }
 
 struct ItemRowView_Previews: PreviewProvider {

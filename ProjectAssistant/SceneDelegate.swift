@@ -8,7 +8,6 @@
 import SwiftUI
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
-    
     @Environment(\.openURL) var openURL
     
     func windowScene(
@@ -37,5 +36,4 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
             openURL(url)
         }
     }
-
 }

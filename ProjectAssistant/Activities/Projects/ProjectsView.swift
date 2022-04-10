@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProjectsView: View {
-    
     static let openTag: String? = "Open"
     static let closedTag: String? = "Closed"
     
@@ -63,11 +62,10 @@ struct ProjectsView: View {
                 Button("Automatic") { viewModel.sortOrder = .optimized }
                 Button("Creation Date") { viewModel.sortOrder = .creationDate }
                 Button("Title") { viewModel.sortOrder = .title }
-               
             }
         label: {
-            Label("Sort Items", systemImage: "arrow.up.arrow.down")
-        }
+                Label("Sort Items", systemImage: "arrow.up.arrow.down")
+            }
         }
     }
     
@@ -99,7 +97,6 @@ struct ProjectsView: View {
     func openURL(_ url: URL) {
         viewModel.addProject()
     }
-    
 }
 
 struct ProjectsView_Previews: PreviewProvider {

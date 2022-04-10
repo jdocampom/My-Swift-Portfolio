@@ -8,7 +8,6 @@
 import Foundation
 
 extension Bundle {
-    
     /// Tag: Generic Method for decoding data stored in the App's Bundle as JSON or XML into any custom Type.
     func decode<T: Decodable>(
         _ type: T.Type,
@@ -16,8 +15,7 @@ extension Bundle {
         dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
         keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
     ) -> T {
-
-        guard let url = self.url(forResource: file, withExtension: nil) else {
+        guard let url = url(forResource: file, withExtension: nil) else {
             fatalError("ERROR: Failed to locate \(file) in Bundle.")
         }
         
@@ -31,17 +29,16 @@ extension Bundle {
         
         do {
             return try decoder.decode(T.self, from: data)
-        } catch DecodingError.keyNotFound(let key, let context) {
+        } catch let DecodingError.keyNotFound(key, context) {
             fatalError("ERROR: Failed to load \(file). - \(key.stringValue) - CONTEXT: \(context.debugDescription).")
-        } catch DecodingError.typeMismatch(_, let context) {
+        } catch let DecodingError.typeMismatch(_, context) {
             fatalError("ERROR: Failed to load \(file). - CONTEXT: \(context.debugDescription).")
-        } catch DecodingError.valueNotFound(let type, let context) {
+        } catch let DecodingError.valueNotFound(type, context) {
             fatalError("ERROR: Failed to load \(file). MISSING \(type) - CONTEXT: \(context.debugDescription).")
-        } catch DecodingError.dataCorrupted(let context) {
+        } catch let DecodingError.dataCorrupted(context) {
             fatalError("ERROR: Failed to load \(file) - Data Corruption. - CONTEXT: \(context.debugDescription).")
         } catch {
             fatalError("ERROR: Failed to decode \(file) from Bundle: \(error.localizedDescription).")
         }
     }
-    
 }

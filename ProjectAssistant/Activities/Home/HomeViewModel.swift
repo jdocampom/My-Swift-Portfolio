@@ -17,11 +17,10 @@ extension HomeView {
         @Published var projects = [Project]()
         @Published var items = [Item]()
         @Published var selectedItem: Item?
-        
-        var dataController: DataController
-        
         @Published var upNext = ArraySlice<Item>()
         @Published var moreToExplore = ArraySlice<Item>()
+        
+        var dataController: DataController
         
         init(dataController: DataController) {
             self.dataController = dataController

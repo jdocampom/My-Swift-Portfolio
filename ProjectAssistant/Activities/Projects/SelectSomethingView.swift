@@ -11,9 +11,9 @@ struct SelectSomethingView: View {
     var body: some View {
         ZStack(alignment: .center) {
 //        Color.systemGroupedBackground.ignoresSafeArea()
-        Text("Please select something from the menu to begin.")
-            .italic()
-            .foregroundColor(.secondary)
+            Text("Please select something from the menu to begin.")
+                .italic()
+                .foregroundColor(.secondary)
         }
     }
 }

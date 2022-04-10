@@ -9,7 +9,6 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: TimelineProvider {
-    
     typealias Entry = SimpleEntry
     
     func placeholder(in context: Context) -> SimpleEntry {
@@ -32,7 +31,6 @@ struct Provider: TimelineProvider {
         let itemRequest = dataController.fetchRequestForTopItems(count: 5)
         return dataController.results(for: itemRequest)
     }
-    
 }
 
 struct SimpleEntry: TimelineEntry {

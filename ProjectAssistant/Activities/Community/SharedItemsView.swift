@@ -9,22 +9,17 @@ import CloudKit
 import SwiftUI
 
 struct SharedItemsView: View {
-    
     let project: SharedProject
     
     @AppStorage("chatCount") var chatCount = 0
+    @AppStorage("username") var username: String?
     
     @State private var cloudError: CloudError?
-    
     @State private var items = [SharedItem]()
     @State private var itemsLoadState = LoadState.inactive
-    
     @State private var messages = [ChatMessage]()
-    
-    @AppStorage("username") var username: String?
     @State private var showingSignIn = false
     @State private var newChatText = ""
-    
     @State private var messagesLoadState = LoadState.inactive
     
     @ViewBuilder var messagesFooter: some View {
@@ -113,7 +108,6 @@ struct SharedItemsView: View {
             let title = record["title"] as? String ?? "No title"
             let detail = record["detail"] as? String ?? ""
             let completed = record["completed"] as? Bool ?? false
-            
             let sharedItem = SharedItem(id: id, title: title, detail: detail, completed: completed)
             items.append(sharedItem)
             itemsLoadState = .success
@@ -182,5 +176,4 @@ struct SharedItemsView: View {
         }
         CKContainer.default().publicCloudDatabase.add(operation)
     }
-    
 }

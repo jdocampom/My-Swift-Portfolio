@@ -12,7 +12,7 @@ struct CloudError: Identifiable, ExpressibleByStringInterpolation {
     var localizedMessage: LocalizedStringKey { LocalizedStringKey(message) }
     var id: String { message }
     var message: String
-    
+
     init(stringLiteral value: String) {
         self.message = value
     }

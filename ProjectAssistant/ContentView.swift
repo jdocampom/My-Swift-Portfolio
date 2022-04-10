@@ -10,7 +10,6 @@ import CoreSpotlight
 import SwiftUI
 
 struct ContentView: View {
-    
     @EnvironmentObject var dataController: DataController
     @SceneStorage("selectedView") var selectedView: String?
     
@@ -73,7 +72,6 @@ struct ContentView: View {
         selectedView = ProjectsView.openTag
         dataController.addProject()
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

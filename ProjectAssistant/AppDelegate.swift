@@ -8,7 +8,6 @@
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
@@ -18,5 +17,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         sceneConfiguration.delegateClass = SceneDelegate.self
         return sceneConfiguration
     }
-    
 }

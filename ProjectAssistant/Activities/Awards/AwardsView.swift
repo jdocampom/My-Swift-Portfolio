@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AwardsView: View {
-    
     static let tag: String? = "Awards"
     private var columns: [GridItem] = [GridItem(.adaptive(minimum: 100, maximum: 100))]
 
@@ -47,11 +46,9 @@ struct AwardsView: View {
             .alert(isPresented: $showingAwardDetails) { generateAlert(for: dataController) }
         }
     }
-    
 }
     
 extension AwardsView {
-    
     private func color(for award: Award) -> Color {
         dataController.hasEarnedAward(award) ? Color(award.color) : Color.secondary.opacity(0.5)
     }
@@ -75,7 +72,6 @@ extension AwardsView {
             )
         }
     }
-    
 }
 
 struct AwardsView_Previews: PreviewProvider {

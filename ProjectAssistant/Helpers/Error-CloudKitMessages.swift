@@ -13,7 +13,7 @@ extension Error {
         guard let error = self as? CKError else {
             return "An unknown error occurred: \(self.localizedDescription)"
         }
-        
+
         switch error.code {
         case .badContainer, .badDatabase, .invalidArguments:
             return "A fatal error occurred: \(error.localizedDescription)"

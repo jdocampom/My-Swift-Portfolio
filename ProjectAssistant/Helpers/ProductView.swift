@@ -9,7 +9,6 @@ import StoreKit
 import SwiftUI
 
 struct ProductView: View {
-    
     @EnvironmentObject var unlockManager: UnlockManager
     
     let product: SKProduct
@@ -29,13 +28,10 @@ struct ProductView: View {
             }
         }
     }
-    
 }
 
 extension ProductView {
-    
     func unlock() {
         unlockManager.buy(product: product)
     }
-    
 }

@@ -36,6 +36,7 @@ struct EditItemView: View {
         .navigationTitle("Edit Item")
         .onDisappear(perform: save)
     }
+
     init(item: Item) {
         self.item = item
         _title = State(wrappedValue: item.itemTitle)
@@ -43,6 +44,7 @@ struct EditItemView: View {
         _priority = State(wrappedValue: Int(item.priority))
         _completed = State(wrappedValue: item.completed)
     }
+
     func update() {
         item.project?.objectWillChange.send()
         item.title = title
@@ -50,6 +52,7 @@ struct EditItemView: View {
         item.priority = Int16(priority)
         item.completed = completed
     }
+
     func save() {
         dataController.update(item)
     }

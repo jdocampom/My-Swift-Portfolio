@@ -7,11 +7,10 @@
 
 import CoreData
 import Foundation
-import UserNotifications
 import StoreKit
+import UserNotifications
 
 extension DataController {
-    
     func appLaunched() {
         guard count(for: Project.fetchRequest()) >= 5 else { return }
         #if !DEBUG
@@ -104,5 +103,4 @@ extension DataController {
             }
         }
     }
-    
 }

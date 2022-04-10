@@ -11,7 +11,7 @@ import SwiftUI
 struct UnlockView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var unlockManager: UnlockManager
-    
+
     var body: some View {
         VStack {
             switch unlockManager.requestState {
@@ -36,13 +36,10 @@ struct UnlockView: View {
             }
         }
     }
-    
 }
 
 extension UnlockView {
-    
     func dismiss() {
         presentationMode.wrappedValue.dismiss()
     }
-    
 }

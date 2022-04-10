@@ -8,11 +8,10 @@
 import Foundation
 
 extension Item {
-    
     enum SortOrder {
         case optimized, title, creationDate
     }
-    
+
     var itemTitle: String { title ?? NSLocalizedString("New Item", comment: "Create a New Item") }
     var itemDetail: String { detail ?? "" }
     var itemCreationDate: Date { creationDate ?? Date() }
@@ -30,5 +29,4 @@ extension Item {
         item.priority = 3
         return item
     }
-
 }

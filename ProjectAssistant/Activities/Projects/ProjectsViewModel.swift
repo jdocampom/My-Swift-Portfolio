@@ -9,9 +9,7 @@ import CoreData
 import Foundation
 
 extension ProjectsView {
-    
     final class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
-    
         let dataController: DataController
         let showClosedProjects: Bool
         var sortOrder = Item.SortOrder.optimized
@@ -73,9 +71,6 @@ extension ProjectsView {
             if let newProjects = controller.fetchedObjects as? [Project] {
                 projects = newProjects
             }
-            
         }
-        
     }
-    
 }

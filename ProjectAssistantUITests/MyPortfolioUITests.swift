@@ -8,7 +8,6 @@
 import XCTest
 
 class MyPortfolioUITests: XCTestCase {
-    
     var app: XCUIApplication!
     
     override func setUpWithError() throws {
@@ -115,5 +114,4 @@ class MyPortfolioUITests: XCTestCase {
             app.buttons["OK"].tap()
         }
     }
-    
 }

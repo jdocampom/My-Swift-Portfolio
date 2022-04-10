@@ -10,18 +10,13 @@ import CoreHaptics
 import SwiftUI
 
 struct EditProjectView: View {
-    
     enum CloudStatus {
         case checking, exists, absent
     }
-    
-    @State private var cloudStatus = CloudStatus.checking
-    @State private var cloudError: CloudError?
-    
+
     private let colorColumns = [GridItem(.adaptive(minimum: 44))]
     
     @AppStorage("username") var username: String?
-    @State private var showingSignIn = false
     
     @ObservedObject var project: Project
     
@@ -32,12 +27,13 @@ struct EditProjectView: View {
     @State private var title: String
     @State private var detail: String
     @State private var color: String
-    
     @State private var remindMe: Bool
     @State private var reminderTime: Date
-    
     @State private var engine = try? CHHapticEngine()
     @State private var showingNotificationsError = false
+    @State private var showingSignIn = false
+    @State private var cloudStatus = CloudStatus.checking
+    @State private var cloudError: CloudError?
     
     var body: some View {
         let message1 = "Closing a project moves it from the Open to Closed tab."
@@ -131,11 +127,9 @@ struct EditProjectView: View {
             _remindMe = State(wrappedValue: false)
         }
     }
-    
 }
 
 extension EditProjectView {
-    
     func update() {
         project.title = title
         project.detail = detail
@@ -168,7 +162,7 @@ extension EditProjectView {
     func toggleClosed() {
         project.completed.toggle()
         update()
-#if os(iOS)
+        #if os(iOS)
         do {
             try? engine?.start()
             let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
@@ -272,7 +266,6 @@ extension EditProjectView {
         cloudStatus = .checking
         CKContainer.default().publicCloudDatabase.add(operation)
     }
-    
 }
 
 struct EditProjectView_Previews: PreviewProvider {

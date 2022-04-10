@@ -9,7 +9,6 @@ import CoreSpotlight
 import SwiftUI
 
 struct HomeView: View {
-    
     @StateObject var viewModel: ViewModel
     
     static let tag: String? = "Home"
@@ -53,14 +52,14 @@ struct HomeView: View {
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadSpotlightItem)
             #if DEBUG
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Add Sample Data", action: viewModel.addSampleData)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Add Sample Data", action: viewModel.addSampleData)
+                    }
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Delete All", action: viewModel.dataController.deleteAll)
+                    }
                 }
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Delete All", action: viewModel.dataController.deleteAll)
-                }
-            }
             #endif
         }
     }
@@ -70,7 +69,6 @@ struct HomeView: View {
             viewModel.selectItem(with: uniqueIdentifier)
         }
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -10,7 +10,6 @@ import SwiftUI
 
 @main
 struct ProjectAssistantApp: App {
-    
     @StateObject var dataController: DataController
     @StateObject var unlockManager: UnlockManager
     
@@ -43,5 +42,4 @@ struct ProjectAssistantApp: App {
     func save(_ note: Notification) {
         dataController.save()
     }
-    
 }

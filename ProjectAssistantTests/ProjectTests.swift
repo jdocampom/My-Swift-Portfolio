@@ -6,11 +6,10 @@
 //
 
 import CoreData
-import XCTest
 @testable import My_Portfolio
+import XCTest
 
 class ProjectTests: BaseTestCase {
-
     func testCreatingProjectsAndItems() {
         let targetCount = 10
         for _ in 0..<targetCount {
@@ -21,9 +20,9 @@ class ProjectTests: BaseTestCase {
             }
         }
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), targetCount)
-        XCTAssertEqual(dataController.count(for: Item.fetchRequest()), targetCount * targetCount )
+        XCTAssertEqual(dataController.count(for: Item.fetchRequest()), targetCount * targetCount)
     }
-    
+
     func testCascadeItemDeletion() throws {
         try dataController.createSampleData()
         let request = NSFetchRequest<Project>(entityName: "Project")
@@ -32,5 +31,4 @@ class ProjectTests: BaseTestCase {
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), 4)
         XCTAssertEqual(dataController.count(for: Item.fetchRequest()), 40)
     }
-
 }

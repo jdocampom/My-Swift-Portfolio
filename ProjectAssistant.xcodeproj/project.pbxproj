@@ -77,8 +77,6 @@
 		8646ED4F28023011006654A8 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646ED4E28023011006654A8 /* PlatformAdjustments.swift */; };
 		8646ED51280230B9006654A8 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646ED50280230B9006654A8 /* Color+Ext.swift */; };
 		8646ED5228023149006654A8 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603778027FE6C3D00D30758 /* LoadState.swift */; };
-		8646ED5328023153006654A8 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777A27FE6BDA00D30758 /* SharedProject.swift */; };
-		8646ED542802315C006654A8 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777C27FE6BF100D30758 /* SharedItem.swift */; };
 		8651719527E8D2B4003C6DDC /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719427E8D2B4003C6DDC /* EditItemView.swift */; };
 		8651719727E8D33D003C6DDC /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719627E8D33D003C6DDC /* ItemRowView.swift */; };
 		8651719927E8D81E003C6DDC /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651719827E8D81E003C6DDC /* Binding+Ext.swift */; };
@@ -123,6 +121,8 @@
 		86D59C5327EDFE5200A60DDD /* My-Portfolio-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86D59C5227EDFE5200A60DDD /* My-Portfolio-Info.plist */; };
 		86D59C5B27EE090600A60DDD /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59C5A27EE090600A60DDD /* MyPortfolioTests.swift */; };
 		86D59C6227EE0B1F00A60DDD /* AssetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59C6127EE0B1F00A60DDD /* AssetTest.swift */; };
+		86DB5DCA28026F7800A84DE3 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777C27FE6BF100D30758 /* SharedItem.swift */; };
+		86DB5DCB28026F7800A84DE3 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603777A27FE6BDA00D30758 /* SharedProject.swift */; };
 		86FC793F27EB9AF4003E16FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794127EB9AF4003E16FE /* Localizable.strings */; };
 		86FC794327EB9B2F003E16FE /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794527EB9B2F003E16FE /* Localizable.stringsdict */; };
 		86FC794727EB9B44003E16FE /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 86FC794927EB9B44003E16FE /* Awards.json */; };
@@ -304,6 +304,11 @@
 			isa = PBXGroup;
 			children = (
 				860906E427FF323B009738FF /* ChatMessage.swift */,
+				8603777C27FE6BF100D30758 /* SharedItem.swift */,
+				8603778227FE6EFD00D30758 /* SharedItemsView.swift */,
+				8603777A27FE6BDA00D30758 /* SharedProject.swift */,
+				8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */,
+				8603778427FE741100D30758 /* SignInView.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -342,13 +347,14 @@
 		8651719A27E8D876003C6DDC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8686740127FFC9700041247E /* CloudError.swift */,
+				868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */,
 				861DE21E27E5052B002B1171 /* Item+CoreData.swift */,
+				8603778027FE6C3D00D30758 /* LoadState.swift */,
+				8601041127F9F382007F8F32 /* ProductView.swift */,
 				861DE22027E5075C002B1171 /* Project+CoreData.swift */,
 				8601040F27F9F127007F8F32 /* PurchaseButton.swift */,
-				8601041127F9F382007F8F32 /* ProductView.swift */,
 				8601041327F9F42C007F8F32 /* UnlockView.swift */,
-				868673FF27FFC7F40041247E /* Error-CloudKitMessages.swift */,
-				8686740127FFC9700041247E /* CloudError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -383,35 +389,6 @@
 			path = ProjectAssistantUITests;
 			sourceTree = "<group>";
 		};
-		868E96D427EF638300B540BA /* ProjectsView */ = {
-			isa = PBXGroup;
-			children = (
-				861DE21427E4F5DF002B1171 /* ProjectsView.swift */,
-				868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */,
-				8603777E27FE6C2E00D30758 /* SharedProjectsView.swift */,
-				8603778227FE6EFD00D30758 /* SharedItemsView.swift */,
-			);
-			path = ProjectsView;
-			sourceTree = "<group>";
-		};
-		868E96D727EF639900B540BA /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				861DE21227E4F517002B1171 /* HomeView.swift */,
-				868E96D527EF639400B540BA /* HomeViewModel.swift */,
-			);
-			path = HomeView;
-			sourceTree = "<group>";
-		};
-		868E96D827EF6F2C00B540BA /* ItemRowView */ = {
-			isa = PBXGroup;
-			children = (
-				8651719627E8D33D003C6DDC /* ItemRowView.swift */,
-				868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */,
-			);
-			path = ItemRowView;
-			sourceTree = "<group>";
-		};
 		86B8A8F127FA7B5500639A14 /* ProjectAssistantWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,14 +405,14 @@
 		86C504E727E4CC270074EBB8 = {
 			isa = PBXGroup;
 			children = (
+				861DE20F27E4DD5C002B1171 /* Frameworks */,
 				86B8A90A27FA815300639A14 /* PortfolioWidgetExtension.entitlements */,
+				86C504F127E4CC270074EBB8 /* Products */,
 				86C504F227E4CC270074EBB8 /* ProjectAssistant */,
+				8646ED1328022C03006654A8 /* ProjectAssistantMac */,
 				86D59C5927EE090600A60DDD /* ProjectAssistantTests */,
 				86784F1B27EE816B005EC3A6 /* ProjectAssistantUITests */,
 				86B8A8F127FA7B5500639A14 /* ProjectAssistantWidget */,
-				8646ED1328022C03006654A8 /* ProjectAssistantMac */,
-				86C504F127E4CC270074EBB8 /* Products */,
-				861DE20F27E4DD5C002B1171 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -456,12 +433,9 @@
 			children = (
 				8601041527FA4DF9007F8F32 /* AppDelegate.swift */,
 				86C504F527E4CC270074EBB8 /* ContentView.swift */,
-				8603778027FE6C3D00D30758 /* LoadState.swift */,
 				8646ED4E28023011006654A8 /* PlatformAdjustments.swift */,
 				86C504F327E4CC270074EBB8 /* ProjectAssistantApp.swift */,
 				8601041727FA4E0A007F8F32 /* SceneDelegate.swift */,
-				8603777C27FE6BF100D30758 /* SharedItem.swift */,
-				8603777A27FE6BDA00D30758 /* SharedProject.swift */,
 				86C504F727E4CC290074EBB8 /* Assets.xcassets */,
 				8651719E27E8E5E2003C6DDC /* Colors.xcassets */,
 				86D59C4C27EDFB7F00A60DDD /* Activities */,
@@ -490,7 +464,6 @@
 				86D59C4D27EDFB9700A60DDD /* Home */,
 				86D59C4E27EDFB9C00A60DDD /* Projects */,
 				86D59C4F27EDFBA500A60DDD /* Awards */,
-				8603778427FE741100D30758 /* SignInView.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -498,9 +471,8 @@
 		86D59C4D27EDFB9700A60DDD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				868E96D727EF639900B540BA /* HomeView */,
-				86FC794C27ECD558003E16FE /* ItemListView.swift */,
-				86FC794E27ECD653003E16FE /* ProjectSummaryView.swift */,
+				861DE21227E4F517002B1171 /* HomeView.swift */,
+				868E96D527EF639400B540BA /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -510,9 +482,13 @@
 			children = (
 				8651719427E8D2B4003C6DDC /* EditItemView.swift */,
 				865171A027E8EA0D003C6DDC /* EditProjectView.swift */,
-				868E96D827EF6F2C00B540BA /* ItemRowView */,
+				86FC794C27ECD558003E16FE /* ItemListView.swift */,
+				8651719627E8D33D003C6DDC /* ItemRowView.swift */,
+				868E96D927EF6F3D00B540BA /* ItemRowViewModel.swift */,
 				8651719C27E8DFF9003C6DDC /* ProjectHeaderView.swift */,
-				868E96D427EF638300B540BA /* ProjectsView */,
+				86FC794E27ECD653003E16FE /* ProjectSummaryView.swift */,
+				861DE21427E4F5DF002B1171 /* ProjectsView.swift */,
+				868E96D227EEBB2400B540BA /* ProjectsViewModel.swift */,
 				860EBEAB27EA292D00BD95E7 /* SelectSomethingView.swift */,
 			);
 			path = Projects;
@@ -807,7 +783,6 @@
 				8646ED2828022DD3006654A8 /* ItemListView.swift in Sources */,
 				8646ED4728022E5B006654A8 /* SKProduct+Ext.swift in Sources */,
 				8646ED4A28022E7F006654A8 /* ChatMessage.swift in Sources */,
-				8646ED542802315C006654A8 /* SharedItem.swift in Sources */,
 				8646ED3028022DE4006654A8 /* SelectSomethingView.swift in Sources */,
 				8646ED4D28022F0D006654A8 /* PlatformAdjustments.swift in Sources */,
 				8646ED2628022DD3006654A8 /* HomeView.swift in Sources */,
@@ -819,6 +794,7 @@
 				8646ED4028022E54006654A8 /* PurchaseButton.swift in Sources */,
 				8646ED3228022DE4006654A8 /* ProjectsViewModel.swift in Sources */,
 				8646ED2728022DD3006654A8 /* HomeViewModel.swift in Sources */,
+				86DB5DCB28026F7800A84DE3 /* SharedProject.swift in Sources */,
 				8646ED4328022E54006654A8 /* UnlockView.swift in Sources */,
 				8646ED4528022E5B006654A8 /* Bundle+Ext.swift in Sources */,
 				8646ED2E28022DE4006654A8 /* EditProjectView.swift in Sources */,
@@ -829,12 +805,12 @@
 				8646ED4428022E5B006654A8 /* Sequence+Ext.swift in Sources */,
 				8646ED3E28022E54006654A8 /* Item+CoreData.swift in Sources */,
 				8646ED2B28022DE4006654A8 /* EditItemView.swift in Sources */,
-				8646ED5328023153006654A8 /* SharedProject.swift in Sources */,
 				8646ED3F28022E54006654A8 /* Error-CloudKitMessages.swift in Sources */,
 				8646ED4928022E5E006654A8 /* SignInView.swift in Sources */,
 				8646ED2F28022DE4006654A8 /* SharedProjectsView.swift in Sources */,
 				8646ED4128022E54006654A8 /* Project+CoreData.swift in Sources */,
 				8646ED3128022DE4006654A8 /* ItemRowView.swift in Sources */,
+				86DB5DCA28026F7800A84DE3 /* SharedItem.swift in Sources */,
 				8646ED5228023149006654A8 /* LoadState.swift in Sources */,
 				8646ED3528022DEF006654A8 /* Award.swift in Sources */,
 				8646ED4828022E5B006654A8 /* Binding+Ext.swift in Sources */,
