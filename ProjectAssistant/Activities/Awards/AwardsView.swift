@@ -36,6 +36,7 @@ struct AwardsView: View {
                             }
                             .accessibilityLabel(label(for: award))
                             .accessibilityHint(Text(award.description))
+                            .buttonStyle(ImageButtonStyle())
                         }
                     }
                 }
